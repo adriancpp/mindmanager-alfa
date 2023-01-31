@@ -3,6 +3,8 @@
 namespace Config;
 
 // Create a new instance of our RouteCollection class.
+use App\Controllers\User;
+
 $routes = Services::routes();
 
 /*
@@ -30,6 +32,8 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
+$routes->get('login', [User::class, 'login']);
+$routes->get('register', [User::class, 'register']);
 
 /*
  * --------------------------------------------------------------------

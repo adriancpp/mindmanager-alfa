@@ -1,0 +1,1 @@
+CREATE TABLE `mind_manager`.`user` (`id` INT NOT NULL AUTO_INCREMENT , `login` VARCHAR(20) NOT NULL , `nickname` VARCHAR(20) NOT NULL , `email` VARCHAR(50) NOT NULL , `password` VARCHAR(255) NOT NULL , `created_at` DATETIME NOT NULL , `updated_at` DATETIME NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
