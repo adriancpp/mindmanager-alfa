@@ -8,8 +8,8 @@
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="form-group">
-                                <label for="firstname">Nick</label>
-                                <input type="text" class="form-control" name="firstname" id="firstname" value="<?= set_value('firstname') ?>">
+                                <label for="firstname">Login</label>
+                                <input type="text" class="form-control" name="login" id="login" value="<?= set_value('login') ?>">
                             </div>
                         </div>
                         <div class="col-12">
@@ -32,12 +32,20 @@
                         </div>
                     </div>
 
+                    <?php if(isset($validation)): ?>
+                        <div class="col-12">
+                            <div class="alert alert-danger" role="alert">
+                                <?= $validation->listErrors(); ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="row">
                         <div class="col-12 col-sm-4">
                             <button type="submit" class="btn btn-primary">Załóż konto</button>
                         </div>
                         <div class="col-12 col-sm-8 text-right">
-                            <a href="/">Już posiadam konto, przejdź do logowania</a>
+                            <a href="/login">Już posiadam konto, przejdź do logowania</a>
                         </div>
                     </div>
                 </form>

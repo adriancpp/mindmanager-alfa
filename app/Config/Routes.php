@@ -3,6 +3,7 @@
 namespace Config;
 
 // Create a new instance of our RouteCollection class.
+use App\Controllers\Dashboard;
 use App\Controllers\User;
 
 $routes = Services::routes();
@@ -31,9 +32,13 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('login', [User::class, 'login']);
-$routes->get('register', [User::class, 'register']);
+$routes->get('/', [User::class, 'index'], ['filter' => 'noauth']);
+//$routes->get('register', [User::class, 'register']);
+$routes->match(['get','post'],'login', 'User::login', ['filter' => 'noauth']);
+$routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth']);
+$routes->get('dashboard', [Dashboard::class, 'index'], ['filter' => 'auth']);
+$routes->match(['get','post'],'profile', 'User::profile', ['filter' => 'auth']);
+$routes->get('logout', [User::class, 'logout']);
 
 /*
  * --------------------------------------------------------------------
