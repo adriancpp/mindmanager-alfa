@@ -21,7 +21,7 @@
                         <div class="col-lg-12">
                             <h3 class="one">Rutynowe</h3>
                             <a href="/routine/new">
-                                <button class="btn float-right">Dodaj nowy</button>
+                                <button class="btn btn-success float-right">Dodaj nowy</button>
                             </a>
                         </div>
                     </div>
@@ -29,23 +29,19 @@
 
                     <div class="panel-body">
                         <ul class="list-group">
+
                             <li class="list-group-item">
                                 <div class="row">
-                                    <div class="col-xs-2 col-md-1">
-                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                                    <div class="col-xs-10 col-md-11">
+                                    <div class="col-xs-6 col-md-6">
                                         <div>
-                                            Siłownia
+                                            <h4 class="card-title">John Doe</h4>
                                         </div>
                                         <div class="action">
                                             <button type="button" class="btn btn-primary btn-xs" title="Edit">
                                                 <span class="glyphicon glyphicon-pencil">Edytuj</span>
                                             </button>
-                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                                <span class="glyphicon glyphicon-ok">Dezaktywuj</span>
-                                            </button>
                                             <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                <span class="glyphicon glyphicon-trash">Usuń</span>
+                                                <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
                                             </button>
                                         </div>
                                     </div>
@@ -53,26 +49,22 @@
                             </li>
                             <li class="list-group-item">
                                 <div class="row">
-                                    <div class="col-xs-2 col-md-1">
-                                        <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" /></div>
-                                    <div class="col-xs-10 col-md-11">
+                                    <div class="col-xs-6 col-md-6">
                                         <div>
-                                            Daily commit
+                                            <h4 class="card-title">Jsilka</h4>
                                         </div>
                                         <div class="action">
                                             <button type="button" class="btn btn-primary btn-xs" title="Edit">
                                                 <span class="glyphicon glyphicon-pencil">Edytuj</span>
                                             </button>
-                                            <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                                <span class="glyphicon glyphicon-ok">Dezaktywuj</span>
-                                            </button>
                                             <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                <span class="glyphicon glyphicon-trash">Usuń</span>
+                                                <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </li>
+
                         </ul>
                     </div>
                 </div>

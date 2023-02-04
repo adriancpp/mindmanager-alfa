@@ -12,4 +12,13 @@ class Routine extends BaseController
         echo view('routine', $data);
         echo view('templates/footer', $data);
     }
+
+    public function createNew()
+    {
+        $data = [];
+
+        echo view('templates/header', $data);
+        echo view('newRoutine', $data);
+        echo view('templates/footer', $data);
+    }
 }
