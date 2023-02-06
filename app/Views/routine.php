@@ -30,11 +30,13 @@
                     <div class="panel-body">
                         <ul class="list-group">
 
+                            <?php foreach ($routines as $routine) : ?>
+
                             <li class="list-group-item">
                                 <div class="row">
                                     <div class="col-xs-6 col-md-6">
                                         <div>
-                                            <h4 class="card-title">John Doe</h4>
+                                            <h4 class="card-title"><?= $routine->name ?></h4>
                                         </div>
                                         <div class="action">
                                             <button type="button" class="btn btn-primary btn-xs" title="Edit">
@@ -47,23 +49,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="list-group-item">
-                                <div class="row">
-                                    <div class="col-xs-6 col-md-6">
-                                        <div>
-                                            <h4 class="card-title">Jsilka</h4>
-                                        </div>
-                                        <div class="action">
-                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                                <span class="glyphicon glyphicon-pencil">Edytuj</span>
-                                            </button>
-                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                            <?php endforeach ?>
 
                         </ul>
                     </div>
