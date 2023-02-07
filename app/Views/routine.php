@@ -39,9 +39,11 @@
                                             <h4 class="card-title"><?= $routine->name ?></h4>
                                         </div>
                                         <div class="action">
-                                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                                <span class="glyphicon glyphicon-pencil">Edytuj</span>
-                                            </button>
+                                            <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-primary">
+
+                                                    <span class="glyphicon glyphicon-pencil">Edytuj</span>
+
+                                            </a>
                                             <button type="button" class="btn btn-danger btn-xs" title="Delete">
                                                 <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
                                             </button>

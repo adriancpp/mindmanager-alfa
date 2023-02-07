@@ -13,3 +13,10 @@ CREATE TABLE `routine` (
                            `required_amount` int DEFAULT NULL,
                            `active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+ALTER TABLE `routine`
+    ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `routine`
+    MODIFY `id` int NOT NULL AUTO_INCREMENT;
+COMMIT;

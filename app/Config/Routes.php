@@ -47,6 +47,7 @@ $routes->get('logout', [User::class, 'logout']);
 //routine
 $routes->get('routine', [Routine::class, 'index'], ['filter' => 'auth']);
 $routes->match(['get','post'],'/routine/new', 'Routine::createNew', ['filter' => 'auth']);
+$routes->match(['get','post'],'/routine/edit/(:any)', 'Routine::edit/$1', ['filter' => 'auth']);
 
 /*
  * --------------------------------------------------------------------
