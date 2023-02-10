@@ -28,9 +28,9 @@
                                     <button class="btn btn-danger" ng-click="delete($index)">
                                         Anuluj
                                     </button>
-                                    <button class="btn btn-success" ng-click="finished($index)">
+                                    <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-success">
                                         Wykonano
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                             <?php endforeach ?>
