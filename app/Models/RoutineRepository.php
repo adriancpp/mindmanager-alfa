@@ -18,4 +18,13 @@ class RoutineRepository
             ->where(['user_id' => $userId])
             ->get()->getResult();
     }
+
+    function allForDashboardCurrentDay($userId)
+    {
+        $currentData = date("d/m");
+        //"SELECT * FROM posts";
+        return $this->db->table('routine')
+            ->where(['user_id' => $userId])
+            ->get()->getResult();
+    }
 }
