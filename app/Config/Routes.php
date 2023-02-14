@@ -49,8 +49,6 @@ $routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth
     $routes->match(['get','post'],'/routine/new', 'Routine::createNew', ['filter' => 'auth']);
     $routes->match(['get','post'],'/routine/edit/(:any)', 'Routine::edit/$1', ['filter' => 'auth']);
 
-    $routes->get('test', [Dashboard::class, 'test'], ['filter' => 'auth']);
-
 /*
  * --------------------------------------------------------------------
  * Additional Routing

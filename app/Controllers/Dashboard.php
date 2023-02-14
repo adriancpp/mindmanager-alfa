@@ -18,24 +18,13 @@ class Dashboard extends BaseController
 
         $data['routines'] = $result;
 
+        $result = $model->allForDashboardCurrentDay(session()->get('id'));
+
+        echo $result;
+        return 0;
+
         echo view('templates/header', $data);
         echo view('dashboard', $data);
         echo view('templates/footer', $data);
-    }
-
-    public function test()
-    {
-        $data = [];
-
-        $doc = new \DOMDocument();
-
-        $stringa = 'wp.pl';
-
-        echo $stringa;
-        $doc->loadHTMLFile($stringa);
-        $h1 = $doc->getElementsByTagName("title")->item(0)->textContent;
-        echo $h1;
-
-        echo 'test';
     }
 }
