@@ -20,7 +20,11 @@ class Dashboard extends BaseController
 
         $result = $model->allForDashboardCurrentDay(session()->get('id'));
 
-        echo $result;
+
+
+                echo '<pre>';
+                print_r($result);
+                echo '</pre>';
         return 0;
 
         echo view('templates/header', $data);
