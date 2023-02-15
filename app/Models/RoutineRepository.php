@@ -24,7 +24,7 @@ class RoutineRepository
         $currentData = date("d/m");
         //"SELECT * FROM posts";
         return $this->db->table('routine')
-            //->join('routine_history', 'routine.id = routine_history.routine_id')
+            //->join('routine_history', 'routine.id = routine_history.routine_id', 'right')
             ->where('cast( routine.created_at as date) = cast(now() as date)')
 
             ->get()->getResult();
