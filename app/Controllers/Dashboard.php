@@ -25,7 +25,6 @@ class Dashboard extends BaseController
                 echo '<pre>';
                 print_r($result);
                 echo '</pre>';
-        return 0;
 
         echo view('templates/header', $data);
         echo view('dashboard', $data);
