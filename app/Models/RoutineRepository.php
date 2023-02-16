@@ -26,6 +26,7 @@ class RoutineRepository
         return $this->db->table('routine')
             //->join('routine_history', 'routine.id = routine_history.routine_id', 'right')
             ->where('cast( routine.created_at as date) = cast(now() as date)')
+            ->where(['user_id' => $userId])
 
             ->get()->getResult();
     }
