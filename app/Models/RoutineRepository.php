@@ -19,7 +19,7 @@ class RoutineRepository
             ->get()->getResult();
     }
 
-    function allForDashboardCurrentDay($userId)
+    function getRoutinesForCurrentDayWithStatus($userId)
     {
         $currentData = date("d/m");
         //"SELECT * FROM posts";

@@ -18,7 +18,7 @@ class Dashboard extends BaseController
 
         $data['routines'] = $result;
 
-        $result = $model->allForDashboardCurrentDay(session()->get('id'));
+        $result = $model->getRoutinesForCurrentDayWithStatus(session()->get('id'));
 
 
 
