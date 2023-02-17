@@ -17,6 +17,12 @@
                         </tr>
                         </thead>
                         <tbody>
+
+                        <!--Current-->      <!--Done-->
+
+                        <!--Left / TO do / Next -->
+
+
                             <?php foreach ($routines as $routine) : ?>
                             <tr>
                                 <td><?= $routine->id ?></td>

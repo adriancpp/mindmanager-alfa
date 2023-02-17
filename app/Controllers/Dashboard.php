@@ -14,16 +14,37 @@ class Dashboard extends BaseController
         $model = new RoutineRepository($db);
 
         $result = $model->all(session()->get('id'));
-        // ->getUserRoutinesDashboard()    -> where day in join routine history if true -> status = ok, else 'no'
 
         $data['routines'] = $result;
 
-        $result = $model->getRoutinesForCurrentDayWithStatus(session()->get('id'));
+        $routines = $model->getRoutinesForCurrentDayWithStatus(session()->get('id'));
+
+
+        foreach ($routines as $routine)
+        {
+            //if ma warunki
+                //if spelnia
+                    //completed
+                //else
+                    //not completed - updated curr/max
+            //else
+                //if status done
+                    //completed
+                //else
+                    //not completed
+
+            //ex
+            $routine->status = 0;
+        }
+
+        $data['routines'] = $routines;
+
+
 
 
 
                 echo '<pre>';
-                print_r($result);
+                print_r($routines);
                 echo '</pre>';
 
         echo view('templates/header', $data);
