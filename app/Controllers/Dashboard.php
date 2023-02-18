@@ -22,6 +22,19 @@ class Dashboard extends BaseController
 
         foreach ($routines as $routine)
         {
+            if( $routine->type == "YESNO" )
+            {
+                if( $routine->status == 1 )
+                {
+                    $routine->status = 1;
+                }
+            }
+            else
+            {
+
+            }
+
+
             //if ma warunki
                 //if spelnia
                     //completed
