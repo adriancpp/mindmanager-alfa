@@ -31,23 +31,30 @@ class Dashboard extends BaseController
             }
             else
             {
+                //if warunek spelniony
+                    //$routine->status = 1;
+
+                //else
+                    //$routine->status = 0;
 
             }
 
-
-            //if ma warunki
-                //if spelnia
-                    //completed
-                //else
-                    //not completed - updated curr/max
-            //else
-                //if status done
-                    //completed
-                //else
-                    //not completed
-
             //ex
             $routine->status = 0;
+        }
+
+        //<!--Current-->      <!--Done-->
+
+        //<!--Left / TO do / Next -->
+
+        //sorted
+        $data['routines']['current'] = null;
+        $data['routines']['done'] = [];
+        $data['routines']['next'] = [];
+
+        foreach ($routines as $routine)
+        {
+            //i teraz pomysl jak to najlepiej podzielic...
         }
 
         $data['routines'] = $routines;
