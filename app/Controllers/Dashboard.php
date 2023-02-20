@@ -55,7 +55,24 @@ class Dashboard extends BaseController
         foreach ($routines as $routine)
         {
             //i teraz pomysl jak to najlepiej podzielic...
+
+            if($routine->status == 0)
+            {
+                $data['routines']['next'][] = $routine;
+            }
+            else if($routine->status == 1)
+            {
+                $data['routines']['done'][] = $routine;
+            }
         }
+
+        //sort by prio
+        //then i can set the first from ['next'], to be ['current']
+        
+        //sort
+
+        //$data['routines']['current'] = $data['routines']['next'][$a];
+
 
         $data['routines'] = $routines;
 
