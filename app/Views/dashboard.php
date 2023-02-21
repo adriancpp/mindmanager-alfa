@@ -29,7 +29,14 @@
                                 <td class="{{ task.status ? 'complete' : 'task' }}">
                                     <?= $routine->name ?>
                                 </td>
-                                <td>{{ task.status ? "Completed" : "In progress" }}</td>
+                                <td>
+                                <?php
+                                    if ($routine->status == 1)
+                                        echo 'Completed';
+                                    elseif ($routine->status == 0)
+                                        echo 'To do';
+                                ?>
+                                </td>
                                 <td>
                                     <button class="btn btn-danger" ng-click="delete($index)">
                                         Anuluj
