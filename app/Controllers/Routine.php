@@ -178,4 +178,55 @@ class Routine extends BaseController
         echo view('editRoutine', $data);
         echo view('templates/footer', $data);
     }
+
+    public function changeRoutineStatus($id, $status)
+    {
+        $data = [];
+
+        return 'id: '.$id.' || status: '.$status;
+
+        $model = new RoutineModel();
+        $routine = $model->find($id);
+
+
+        if($this->request->getMethod() == 'post')
+        {
+            $rules = [
+                'name' => 'required|min_length[1]|max_length[50]',
+                'sort' => 'required|is_natural_no_zero',
+            ];
+
+            $errors = [
+                'password' => [
+                    'validateUser' => 'Błędne dane'
+                ]
+            ];
+
+            if( !$this->validate($rules, $errors))
+            {
+                $data['validation'] = $this->validator;
+            }
+            else {
+                $model = new RoutineModel();
+
+                $newData = [
+                    'id' => $id,
+                    'name' => $this->request->getVar('name'),
+                    'type' => $this->request->getVar('type'),
+                    'sort' => $this->request->getVar('sort'),
+                    'user_id' => session()->get('id'),
+                    'priority' => $this->request->getVar('priority'),
+                    'required_amount' => $this->request->getVar('required_amount'),
+                    'active' => $this->request->getVar('active'),
+                ];
+
+                $model->save($newData);
+                return redirect()->to('/routine');
+            }
+        }
+
+        echo view('templates/header', $data);
+        echo view('editRoutine', $data);
+        echo view('templates/footer', $data);
+    }
 }

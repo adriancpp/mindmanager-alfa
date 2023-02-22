@@ -41,7 +41,7 @@
                                     <button class="btn btn-danger" ng-click="delete($index)">
                                         Anuluj
                                     </button>
-                                    <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-success">
+                                    <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
                                         Wykonano
                                     </a>
                                 </td>
