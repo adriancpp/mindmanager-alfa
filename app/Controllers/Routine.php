@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\BlogModel;
 use App\Models\CustomModel;
+use App\Models\RoutineHistoryModel;
 use App\Models\RoutineModel;
 use App\Models\RoutineRepository;
 use App\Models\UserModel;
@@ -192,14 +193,6 @@ class Routine extends BaseController
         if($this->request->getMethod() == 'post')
         {
             $rules = [
-                'name' => 'required|min_length[1]|max_length[50]',
-                'sort' => 'required|is_natural_no_zero',
-            ];
-
-            $errors = [
-                'password' => [
-                    'validateUser' => 'Błędne dane'
-                ]
             ];
 
             if( !$this->validate($rules, $errors))
@@ -207,10 +200,9 @@ class Routine extends BaseController
                 $data['validation'] = $this->validator;
             }
             else {
-                $model = new RoutineModel();
+                $model = new RoutineHistoryModel();
 
                 $newData = [
-                    'id' => $id,
                     'name' => $this->request->getVar('name'),
                     'type' => $this->request->getVar('type'),
                     'sort' => $this->request->getVar('sort'),
