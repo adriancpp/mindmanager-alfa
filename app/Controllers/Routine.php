@@ -186,6 +186,7 @@ class Routine extends BaseController
 
         return 'id: '.$id.' || status: '.$status;
 
+
         $model = new RoutineModel();
         $routine = $model->find($id);
 
@@ -204,12 +205,7 @@ class Routine extends BaseController
 
                 $newData = [
                     'name' => $this->request->getVar('name'),
-                    'type' => $this->request->getVar('type'),
-                    'sort' => $this->request->getVar('sort'),
-                    'user_id' => session()->get('id'),
-                    'priority' => $this->request->getVar('priority'),
-                    'required_amount' => $this->request->getVar('required_amount'),
-                    'active' => $this->request->getVar('active'),
+                    'status' => $status
                 ];
 
                 $model->save($newData);
