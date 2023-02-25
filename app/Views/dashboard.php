@@ -10,10 +10,10 @@
                     <table class="table table-hover table-bordered table-light">
                         <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Todo item</th>
-                            <th>status</th>
-                            <th>Actions</th>
+                            <th>Priorytet</th>
+                            <th>Nazwa</th>
+                            <th>Status</th>
+                            <th>Akcje</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -25,7 +25,7 @@
 
                             <?php foreach ($routines as $routine) : ?>
                             <tr>
-                                <td><?= $routine->id ?></td>
+                                <td><?= $routine->priority ?></td>
                                 <td class="{{ task.status ? 'complete' : 'task' }}">
                                     <?= $routine->name ?>
                                 </td>

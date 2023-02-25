@@ -41,6 +41,15 @@ class Dashboard extends BaseController
 
             //ex
             $routine->status = 0;
+
+
+            if($routine->priority === 1)
+                $routine->priority = "Niski";
+            else if($routine->priority == 2)
+                $routine->priority = "Normalny";
+            else if($routine->priority == 3)
+                $routine->priority = "Wysoki";
+
         }
 
         //<!--Current-->      <!--Done-->
