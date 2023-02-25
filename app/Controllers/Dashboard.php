@@ -56,12 +56,14 @@ class Dashboard extends BaseController
         {
             //i teraz pomysl jak to najlepiej podzielic...
 
-            if($routine->status == 0)
+            if($routine->status === 0)
             {
+                $routine->status = "Do zrobienia";
                 $data['routines']['next'][] = $routine;
             }
-            else if($routine->status == 1)
+            else if($routine->status === 1)
             {
+                $routine->status = "Gotowe";
                 $data['routines']['done'][] = $routine;
             }
         }

@@ -31,10 +31,7 @@
                                 </td>
                                 <td>
                                 <?php
-                                    if ($routine->status == 1)
-                                        echo 'Completed';
-                                    elseif ($routine->status == 0)
-                                        echo 'To do';
+                                    echo $routine->status;
                                 ?>
                                 </td>
                                 <td>
