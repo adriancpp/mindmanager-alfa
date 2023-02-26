@@ -25,6 +25,12 @@
                         <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
                             <a class="nav-link" href="/routine">Rutynowe</a>
                         </li>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
+                            <a class="nav-link" href="/routine">Streak</a>
+                        </li>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
+                            <a class="nav-link" href="/routine">Wykresy</a>
+                        </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">
                             <a class="nav-link" href="/profile">Profil</a>
                         </li>

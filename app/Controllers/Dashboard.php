@@ -43,7 +43,7 @@ class Dashboard extends BaseController
             $routine->status = 0;
 
             //priority
-            if($routine->priority === 1)
+            if($routine->priority == 1)
             {
                 $routine->priorityName = "Niski";
                 $routine->color = "#A8D3B7";
@@ -99,6 +99,11 @@ class Dashboard extends BaseController
 //                echo '<pre>';
 //                print_r($routines);
 //                echo '</pre>';
+
+        //   col              col
+        // AKTUALNE   |    ZROBIONE
+        // -----------|
+        // NASTEPNE   |
 
         echo view('templates/header', $data);
         echo view('dashboard', $data);
