@@ -42,13 +42,22 @@ class Dashboard extends BaseController
             //ex
             $routine->status = 0;
 
-
+            //priority
             if($routine->priority === 1)
+            {
                 $routine->priorityName = "Niski";
+                $routine->color = "#A8D3B7";
+            }
             else if($routine->priority == 2)
+            {
                 $routine->priorityName = "Normalny";
+                $routine->color = "#F7EFC0";
+            }
             else if($routine->priority == 3)
+            {
                 $routine->priorityName = "Wysoki";
+                $routine->color = "#EEA4A7";
+            }
 
         }
 

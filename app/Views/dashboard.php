@@ -25,16 +25,7 @@
 
                             <?php foreach ($routines as $routine) : ?>
                             <tr>
-                                <td style="background-color:
-                                <?php
-                                if($routine->priority == 1)
-                                    echo '#A8D3B7';
-                                if($routine->priority == 2)
-                                    echo '#F7EFC0';
-                                if($routine->priority == 3)
-                                    echo '#EEA4A7';
-                                ?>
-                                ;">
+                                <td style="background-color: <?= $routine->color ?>;">
                                     <?= $routine->priorityName ?>
                                 </td>
                                 <td class="{{ task.status ? 'complete' : 'task' }}">
