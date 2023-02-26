@@ -44,11 +44,11 @@ class Dashboard extends BaseController
 
 
             if($routine->priority === 1)
-                $routine->priority = "Niski";
+                $routine->priorityName = "Niski";
             else if($routine->priority == 2)
-                $routine->priority = "Normalny";
+                $routine->priorityName = "Normalny";
             else if($routine->priority == 3)
-                $routine->priority = "Wysoki";
+                $routine->priorityName = "Wysoki";
 
         }
 
@@ -87,13 +87,9 @@ class Dashboard extends BaseController
 
         $data['routines'] = $routines;
 
-
-
-
-
-                echo '<pre>';
-                print_r($routines);
-                echo '</pre>';
+//                echo '<pre>';
+//                print_r($routines);
+//                echo '</pre>';
 
         echo view('templates/header', $data);
         echo view('dashboard', $data);
