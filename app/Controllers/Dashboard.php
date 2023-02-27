@@ -89,16 +89,19 @@ class Dashboard extends BaseController
         //sort by prio
         //then i can set the first from ['next'], to be ['current']
 
+
+        $data['routines']['current'] = $data['routines']['next'][0];
+
         //sort
 
         //$data['routines']['current'] = $data['routines']['next'][$a];
 
 
-        $data['routines'] = $routines;
+        //$data['routines'] = $routines;
 
-//                echo '<pre>';
-//                print_r($routines);
-//                echo '</pre>';
+                echo '<pre>';
+                print_r($data);
+                echo '</pre>';
 
         //   col              col
         // AKTUALNE   |    ZROBIONE

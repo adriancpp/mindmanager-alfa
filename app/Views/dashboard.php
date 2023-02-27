@@ -19,7 +19,7 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        <b><?= $routines['current']->priorityName ?></b>
                         <?php foreach ($routines as $routine) : ?>
                             <tr>
                                 <td style="background-color: <?= $routine->color ?>;">
