@@ -36,7 +36,7 @@
                                 <div class="row">
                                     <div class="col-xs-6 col-md-6">
                                         <div>
-                                            <h4 class="card-title"><?= $routine->name ?></h4>
+                                            <h4 class="card-title"><?= $routine->name ?></h4> [streak: 0dni]
                                         </div>
                                         <div class="action">
                                             <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-primary">

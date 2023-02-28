@@ -184,39 +184,36 @@ class Routine extends BaseController
     {
         $data = [];
 
+        $db = db_connect();
+        $model = new RoutineRepository($db);
+        //secure for not owner id paste
+        if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $id)))
+            return redirect()->to('/dashboard');
+
+        $routineHistoryModel = $model->getRoutineHistoryByRoutine($id);
+
+        $model = new RoutineHistoryModel();
+
+        if($routineHistoryModel)
+        {
+            $newData = [
+                'id' => $routineHistoryModel['id'],
+                'routine_id' => $id,
+                'status' => $status
+            ];
+
+            $model->save($newData);
+        }
+        else
+        {
+            $newData = [
+                'routine_id' => $id,
+                'status' => $status
+            ];
+
+            $model->save($newData);
+        }
+
         return redirect()->to('/dashboard');
-
-        //return 'id: '.$id.' || status: '.$status;
-
-
-//        $model = new RoutineModel();
-//        $routine = $model->find($id);
-//
-//
-//        if($this->request->getMethod() == 'post')
-//        {
-//            $rules = [
-//            ];
-//
-//            if( !$this->validate($rules, $errors))
-//            {
-//                $data['validation'] = $this->validator;
-//            }
-//            else {
-//                $model = new RoutineHistoryModel();
-//
-//                $newData = [
-//                    'name' => $this->request->getVar('name'),
-//                    'status' => $status
-//                ];
-//
-//                $model->save($newData);
-//                return redirect()->to('/routine');
-//            }
-//        }
-//
-//        echo view('templates/header', $data);
-//        echo view('editRoutine', $data);
-//        echo view('templates/footer', $data);
     }
 }

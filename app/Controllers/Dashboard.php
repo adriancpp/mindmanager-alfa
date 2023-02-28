@@ -19,7 +19,6 @@ class Dashboard extends BaseController
 
         $routines = $model->getRoutinesForCurrentDayWithStatus(session()->get('id'));
 
-
         foreach ($routines as $routine)
         {
             if( $routine->type == "YESNO" )
@@ -39,8 +38,15 @@ class Dashboard extends BaseController
 
             }
 
+            if( $routine->status )
+            {
+                $routine->status = 1;
+            }
+            else
+                $routine->status = 0;
+
             //ex
-            $routine->status = 0;
+            //$routine->status = 1;
 
             //priority
             if($routine->priority == 1)
@@ -74,12 +80,12 @@ class Dashboard extends BaseController
         {
             //i teraz pomysl jak to najlepiej podzielic...
 
-            if($routine->status === 0)
+            if($routine->status == 0)
             {
                 $routine->status = "Do zrobienia";  //0%
                 $data['routines']['next'][] = $routine;
             }
-            else if($routine->status === 1)
+            else if($routine->status == 1)
             {
                 $routine->status = "Gotowe";    //100%
                 $data['routines']['done'][] = $routine;
@@ -94,6 +100,8 @@ class Dashboard extends BaseController
             $data['routines']['current'][] = $data['routines']['next'][0];
         else
             $data['routines']['current'] = [];
+
+        array_shift($data['routines']['next']);
 
         //sort
 

@@ -50,9 +50,9 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5">
+                        <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5" style="width: 100%">
                             <h4>Następne</h4>
-                            <div class="table-wrapper">
+                            <div class="table-wrapper" style="width: 100%">
                                 <div class="table-wrapper">
                                     <table class="table table-hover table-bordered table-light">
                                         <thead>
@@ -98,7 +98,7 @@
                 <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5" style="width: 100%">
                     <h4>Zrobione</h4>
                     <div class="table-wrapper" style="width: 100%">
-                        <div class="table-wrapper" style="width: 100%">
+                        <div class="table-wrapper">
                             <table class="table table-hover table-bordered table-light">
                                 <thead>
                                 <tr>
@@ -124,9 +124,9 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <button class="btn btn-danger" ng-click="delete($index)">
+                                            <a href="/routine/status/<?= $routine->id ?>/0" class="btn btn-danger">
                                                 Anuluj
-                                            </button>
+                                            </a>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
