@@ -15,3 +15,33 @@
         </form>
     </div>
 </div>
+
+
+=======
+
+
+//                echo '<pre>';
+//                print_r($data);
+//                echo '</pre>';
+
+//   col              col
+// AKTUALNE   |    ZROBIONE
+// -----------|
+// NASTEPNE   |
+
+
+<div class="row">
+    <div class="column">
+        <div class="container">
+            <div class="row">
+                Aktualne
+            </div>
+            <div class="row">
+                Nastepne xxxx
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        Gotowe
+    </div>
+</div>

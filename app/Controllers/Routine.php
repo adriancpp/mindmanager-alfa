@@ -184,37 +184,39 @@ class Routine extends BaseController
     {
         $data = [];
 
-        return 'id: '.$id.' || status: '.$status;
+        return redirect()->to('/dashboard');
+
+        //return 'id: '.$id.' || status: '.$status;
 
 
-        $model = new RoutineModel();
-        $routine = $model->find($id);
-
-
-        if($this->request->getMethod() == 'post')
-        {
-            $rules = [
-            ];
-
-            if( !$this->validate($rules, $errors))
-            {
-                $data['validation'] = $this->validator;
-            }
-            else {
-                $model = new RoutineHistoryModel();
-
-                $newData = [
-                    'name' => $this->request->getVar('name'),
-                    'status' => $status
-                ];
-
-                $model->save($newData);
-                return redirect()->to('/routine');
-            }
-        }
-
-        echo view('templates/header', $data);
-        echo view('editRoutine', $data);
-        echo view('templates/footer', $data);
+//        $model = new RoutineModel();
+//        $routine = $model->find($id);
+//
+//
+//        if($this->request->getMethod() == 'post')
+//        {
+//            $rules = [
+//            ];
+//
+//            if( !$this->validate($rules, $errors))
+//            {
+//                $data['validation'] = $this->validator;
+//            }
+//            else {
+//                $model = new RoutineHistoryModel();
+//
+//                $newData = [
+//                    'name' => $this->request->getVar('name'),
+//                    'status' => $status
+//                ];
+//
+//                $model->save($newData);
+//                return redirect()->to('/routine');
+//            }
+//        }
+//
+//        echo view('templates/header', $data);
+//        echo view('editRoutine', $data);
+//        echo view('templates/footer', $data);
     }
 }

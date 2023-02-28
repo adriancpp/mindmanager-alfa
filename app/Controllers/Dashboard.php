@@ -6,7 +6,7 @@ use App\Models\RoutineRepository;
 
 class Dashboard extends BaseController
 {
-    public function index()
+    public static function index()
     {
         $data = [];
 
@@ -45,17 +45,17 @@ class Dashboard extends BaseController
             //priority
             if($routine->priority == 1)
             {
-                $routine->priorityName = "Niski";
+                $routine->priorityName = "Low";
                 $routine->color = "#A8D3B7";
             }
             else if($routine->priority == 2)
             {
-                $routine->priorityName = "Normalny";
+                $routine->priorityName = "Mid";
                 $routine->color = "#F7EFC0";
             }
             else if($routine->priority == 3)
             {
-                $routine->priorityName = "Wysoki";
+                $routine->priorityName = "Hig";
                 $routine->color = "#EEA4A7";
             }
 
@@ -76,12 +76,12 @@ class Dashboard extends BaseController
 
             if($routine->status === 0)
             {
-                $routine->status = "Do zrobienia";
+                $routine->status = "Do zrobienia";  //0%
                 $data['routines']['next'][] = $routine;
             }
             else if($routine->status === 1)
             {
-                $routine->status = "Gotowe";
+                $routine->status = "Gotowe";    //100%
                 $data['routines']['done'][] = $routine;
             }
         }
@@ -89,24 +89,21 @@ class Dashboard extends BaseController
         //sort by prio
         //then i can set the first from ['next'], to be ['current']
 
-
-        $data['routines']['current'][] = $data['routines']['next'][0];
+        //temporary solution!!!!
+        if(count($data['routines']['next'])>0)
+            $data['routines']['current'][] = $data['routines']['next'][0];
+        else
+            $data['routines']['current'] = [];
 
         //sort
 
         //$data['routines']['current'] = $data['routines']['next'][$a];
 
 
-        //$data['routines'] = $routines;
-
 //                echo '<pre>';
 //                print_r($data);
 //                echo '</pre>';
 
-        //   col              col
-        // AKTUALNE   |    ZROBIONE
-        // -----------|
-        // NASTEPNE   |
 
         echo view('templates/header', $data);
         echo view('dashboard', $data);
