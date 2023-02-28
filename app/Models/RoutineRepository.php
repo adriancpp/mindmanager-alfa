@@ -16,7 +16,6 @@ class RoutineRepository
         //"SELECT * FROM posts";
         return $this->db->table('routine')
             ->where(['user_id' => $userId])
-            ->where(['routine.active' => 1])
             ->get()->getResult();
     }
 
