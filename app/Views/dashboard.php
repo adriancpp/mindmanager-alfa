@@ -19,8 +19,8 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <b><?= $routines['current']->priorityName ?></b>
-                        <?php foreach ($routines as $routine) : ?>
+
+                        <?php foreach ($routines['current'] as $routine) : ?>
                             <tr>
                                 <td style="background-color: <?= $routine->color ?>;">
                                     <?= $routine->priorityName ?>
@@ -67,7 +67,7 @@
                         </thead>
                         <tbody>
 
-                            <?php foreach ($routines as $routine) : ?>
+                            <?php foreach ($routines['next'] as $routine) : ?>
                             <tr>
                                 <td style="background-color: <?= $routine->color ?>;">
                                     <?= $routine->priorityName ?>
@@ -112,7 +112,7 @@
                         </thead>
                         <tbody>
 
-                        <?php foreach ($routines as $routine) : ?>
+                        <?php foreach ($routines['done'] as $routine) : ?>
                             <tr>
                                 <td style="background-color: <?= $routine->color ?>;">
                                     <?= $routine->priorityName ?>

@@ -90,7 +90,7 @@ class Dashboard extends BaseController
         //then i can set the first from ['next'], to be ['current']
 
 
-        $data['routines']['current'] = $data['routines']['next'][0];
+        $data['routines']['current'][] = $data['routines']['next'][0];
 
         //sort
 
@@ -99,9 +99,9 @@ class Dashboard extends BaseController
 
         //$data['routines'] = $routines;
 
-                echo '<pre>';
-                print_r($data);
-                echo '</pre>';
+//                echo '<pre>';
+//                print_r($data);
+//                echo '</pre>';
 
         //   col              col
         // AKTUALNE   |    ZROBIONE
