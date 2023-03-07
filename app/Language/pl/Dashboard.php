@@ -1,7 +1,7 @@
 <?php
 
 return [
-'title' => "Welcome to my blog",
+    'title' => "Witam na blogu",
 'metaDescription' => "Example of a multilingual web site made with CodeIgniter",
 'metaKeywords' => "CodeIgniter, language, example",
 'languageName_de' => "German (Deutsch)",

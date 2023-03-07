@@ -10,8 +10,13 @@ class User extends BaseController
     {
         $data = [];
 
+        $data['locale'] = session()->get('lang');
+
+        $filename = 'lang/'.$data['locale'].'/changelog';
+
+
         echo view('templates/header', $data);
-        echo view('changelog', $data);
+        echo view($filename, $data);
         echo view('templates/footer', $data);
     }
 
