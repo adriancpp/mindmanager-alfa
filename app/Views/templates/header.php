@@ -37,6 +37,14 @@
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">
+                            <a class="dropdown-item" href="<?= base_url('lang/en'); ?>">English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="<?= base_url('lang/pl'); ?>">PL</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav my-2 my-lg-0">
+                        <li class="nav-item">
                             <a class="nav-link" href="/logout">Wyloguj</a>
                         </li>
                     </ul>
@@ -47,6 +55,14 @@
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
                             <a class="nav-link" href="/register">Rejestracja</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav my-2 my-lg-0">
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="<?= base_url('lang/en'); ?>">English</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="<?= base_url('lang/pl'); ?>">PL</a>
                         </li>
                     </ul>
                 <?php endif; ?>
