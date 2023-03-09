@@ -2,9 +2,9 @@
 
 return [
 'title' => "Mind Manager",
-'nav_mainPage' => "Strona główna",
-'metaKeywords' => "CodeIgniter, language, example",
-'languageName_de' => "German (Deutsch)",
+'nav_mainPage' => "Main page",
+'nav_routines' => "Routines",
+'nav_streak' => "Streak",
 'languageName_en' => "English",
 'languageName_es' => "Spanish (Español)",
 'languageName_fr' => "French (Français)",

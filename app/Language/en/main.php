@@ -1,10 +1,10 @@
 <?php
 
 return [
-'title' => "Welcome to my blog",
-'metaDescription' => "Example of a multilingual web site made with CodeIgniter",
-'metaKeywords' => "CodeIgniter, language, example",
-'languageName_de' => "German (Deutsch)",
+    'title' => "Mind Manager",
+    'nav_mainPage' => "Strona główna",
+    'nav_routines' => "Rutynowe",
+    'nav_streak' => "Streak",
 'languageName_en' => "English",
 'languageName_es' => "Spanish (Español)",
 'languageName_fr' => "French (Français)",
