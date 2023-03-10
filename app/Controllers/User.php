@@ -12,6 +12,8 @@ class User extends BaseController
 
         $data['locale'] = session()->get('lang');
 
+        if( $data['locale'] ==null) $data['locale'] = 'en';
+
         $filename = 'lang/'.$data['locale'].'/changelog';
 
 

@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 class Language extends BaseController
 {
-
     public function index()
     {   $session = session();
         $locale = $this->request->getLocale();
