@@ -6,7 +6,7 @@ return [
 'nav_routines' => "Routines",
 'nav_streak' => "Streak",
 'nav_charts' => "Wykresy",
-'languageName_es' => "Spanish (Español)",
+'nav_profile' => "Profil",
 'languageName_fr' => "French (Français)",
 'languageName_ja' => "Japanese (日本語)",
 'aboutTitle' => "About",
