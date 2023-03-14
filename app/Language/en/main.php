@@ -6,9 +6,8 @@ return [
     'nav_routines' => "Rutynowe",
     'nav_streak' => "Streak",
     'nav_charts' => "Charts",
-    'nav_profile' => "Profil",
+    'nav_profile' => "Profile",
     'nav_lang_en' => "English",
     'nav_lang_pl' => "Polish",
-'aboutTitle' => "About",
-'aboutText' => "Hello, here is an example of a multilingual blog.",
+    'nav_logout' => "Logout",
 ];

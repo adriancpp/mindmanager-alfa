@@ -9,6 +9,5 @@ return [
     'nav_profile' => "Profil",
     'nav_lang_en' => "Angielski",
     'nav_lang_pl' => "Polski",
-'aboutTitle' => "About",
-'aboutText' => "Hello, here is an example of a multilingual blog.",
+    'nav_logout' => "Wyloguj",
 ];
