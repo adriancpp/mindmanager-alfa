@@ -17,6 +17,21 @@
 </div>
 
 
+
+
+
+<ul class="navbar-nav my-2 my-lg-0">
+    <li class="nav-item">
+        <a class="dropdown-item" href="<?= base_url('lang/en'); ?>">English</a>
+    </li>
+    <li class="nav-item">
+        <a class="dropdown-item" href="<?= base_url('lang/pl'); ?>">PL</a>
+    </li>
+</ul>
+
+
+
+
 =======
 
 
