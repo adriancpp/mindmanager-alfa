@@ -43,6 +43,8 @@ abstract class BaseController extends Controller
      */
     // protected $session;
 
+    protected $viewData = [];
+
     /**
      * Constructor.
      */
@@ -53,9 +55,16 @@ abstract class BaseController extends Controller
 
         // Preload any models, libraries, etc, here.
 
+
+        $this->viewData['locale'] = $request->getLocale();
+
         // E.g.: $this->session = \Config\Services::session();
         $session = \Config\Services::session();
         $language = \Config\Services::language();
+
+        if(!$session->lang)
+            $session->lang = $this->viewData['locale'];
+
         $language->setLocale($session->lang);
     }
 }
