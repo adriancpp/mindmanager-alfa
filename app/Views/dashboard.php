@@ -37,22 +37,19 @@
                                                     ?>
                                                 </td>
                                                 <td>
-
-                                                    <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
-                                                        Wykonano
-                                                    </a>
-
-                                                    <form>
-                                                        <div class="form-check">
-                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                                            <label class="form-check-label" for="exampleCheck1">Ilość</label>
-                                                        </div>
-                                                        <button type="submit" class="btn btn-primary">Wykonano 2</button>
-                                                    </form>
-
-
-
-
+                                                    <?php if($routine->type == "COUNT"): ?>
+                                                        <form class="" action="/routine/status" method="post">
+                                                            <div class="form-group" id="amount">
+                                                                <label for="amount">Ilość</label>
+                                                                <input type="text" class="form-control" name="amount" id="amount" value="">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-success">Zmień</button>
+                                                        </form>
+                                                    <?php else: ?>
+                                                        <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
+                                                            Wykonano
+                                                        </a>
+                                                    <?php endif; ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>

@@ -180,38 +180,45 @@ class Routine extends BaseController
         echo view('templates/footer', $data);
     }
 
-    public function changeRoutineStatus($id, $status)
+    public function changeRoutineStatus($id = null, $status = null)
     {
-        $data = [];
-
         $db = db_connect();
-        $model = new RoutineRepository($db);
-        //secure for not owner id paste
-        if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $id)))
-            return redirect()->to('/dashboard');
 
-        $routineHistoryModel = $model->getRoutineHistoryByRoutine($id);
-
-        $model = new RoutineHistoryModel();
-
-        if($routineHistoryModel)
+        if($this->request->getMethod() == 'post')
         {
-            $newData = [
-                'id' => $routineHistoryModel['id'],
-                'routine_id' => $id,
-                'status' => $status
-            ];
-
-            $model->save($newData);
+            echo 'dupa';
+            return 0;
         }
         else
         {
-            $newData = [
-                'routine_id' => $id,
-                'status' => $status
-            ];
+            $model = new RoutineRepository($db);
+            //secure for not owner id paste
+            if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $id)))
+                return redirect()->to('/dashboard');
 
-            $model->save($newData);
+            $routineHistoryModel = $model->getRoutineHistoryByRoutine($id);
+
+            $model = new RoutineHistoryModel();
+
+            if($routineHistoryModel)
+            {
+                $newData = [
+                    'id' => $routineHistoryModel['id'],
+                    'routine_id' => $id,
+                    'status' => $status
+                ];
+
+                $model->save($newData);
+            }
+            else
+            {
+                $newData = [
+                    'routine_id' => $id,
+                    'status' => $status
+                ];
+
+                $model->save($newData);
+            }
         }
 
         return redirect()->to('/dashboard');
