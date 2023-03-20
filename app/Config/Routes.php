@@ -3,6 +3,7 @@
 namespace Config;
 
 // Create a new instance of our RouteCollection class.
+use App\Controllers\Charts;
 use App\Controllers\Dashboard;
 use App\Controllers\Routine;
 use App\Controllers\User;
@@ -50,6 +51,8 @@ $routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth
     $routes->match(['get','post'],'/routine/edit/(:any)', 'Routine::edit/$1', ['filter' => 'auth']);
 
     $routes->match(['get','post'],'/routine/status/(:any)/(:any)', 'Routine::changeRoutineStatus/$1/$2', ['filter' => 'auth']);
+
+    $routes->get('charts', [Charts::class, 'index'], ['filter' => 'auth']);
 
 $routes->get('/lang/{locale}', 'Language::index');
 /*

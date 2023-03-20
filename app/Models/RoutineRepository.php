@@ -43,7 +43,8 @@ class RoutineRepository
         //"SELECT * FROM posts";
         return $this->db->table('routine')
             ->select('routine.id as id, routine.name, routine_history.id as rhId, 
-                        routine.type as type, routine_history.status as status, routine.priority as priority')
+                        routine.type as type, routine_history.status as status, routine.priority as priority, 
+                        routine_history.value as amount')
             ->join('routine_history', 'routine.id = routine_history.routine_id 
                     and cast( routine_history.updated_at as date) = cast(now() as date)
                     

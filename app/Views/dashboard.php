@@ -41,7 +41,8 @@
                                                         <form class="" action="/routine/status/<?= $routine->id ?>/1" method="post">
                                                             <div class="form-group" id="amount">
                                                                 <label for="amount">Ilość</label>
-                                                                <input type="number" step="0.01" class="form-control" name="amount" id="amount" value="">
+                                                                <input type="number" step="0.01" class="form-control" name="amount"
+                                                                       id="amount" value="<?= $routine->amount ?>">
                                                             </div>
                                                             <button type="submit" class="btn btn-success">Zmień</button>
                                                         </form>
