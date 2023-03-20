@@ -11,7 +11,7 @@ class RoutineHistoryModel extends Model
     /*
     Type:
      */
-    protected $allowedFields = ['routine_id', 'status'];
+    protected $allowedFields = ['routine_id', 'status', 'value'];
     protected $useTimestamps = true;
 
     protected $beforeInsert = ['beforeInsert'];

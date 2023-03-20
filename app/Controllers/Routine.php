@@ -184,22 +184,41 @@ class Routine extends BaseController
     {
         $db = db_connect();
 
+        $model = new RoutineRepository($db);
+        //secure for not owner id paste
+        if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $id)))
+            return redirect()->to('/dashboard');
+
+        $routineHistoryModel = $model->getRoutineHistoryByRoutine($id);
+
+        $model = new RoutineHistoryModel();
+
         if($this->request->getMethod() == 'post')
         {
-            echo 'dupa';
-            return 0;
+            if($routineHistoryModel)
+            {
+                $newData = [
+                    'id' => $routineHistoryModel['id'],
+                    'routine_id' => $id,
+                    'status' => $status,
+                    'value' => $this->request->getVar('amount')
+                ];
+
+                $model->save($newData);
+            }
+            else
+            {
+                $newData = [
+                    'routine_id' => $id,
+                    'status' => $status,
+                    'value' => $this->request->getVar('amount')
+                ];
+
+                $model->save($newData);
+            }
         }
         else
         {
-            $model = new RoutineRepository($db);
-            //secure for not owner id paste
-            if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $id)))
-                return redirect()->to('/dashboard');
-
-            $routineHistoryModel = $model->getRoutineHistoryByRoutine($id);
-
-            $model = new RoutineHistoryModel();
-
             if($routineHistoryModel)
             {
                 $newData = [

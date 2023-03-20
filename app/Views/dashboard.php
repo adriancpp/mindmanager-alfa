@@ -38,10 +38,10 @@
                                                 </td>
                                                 <td>
                                                     <?php if($routine->type == "COUNT"): ?>
-                                                        <form class="" action="/routine/status" method="post">
+                                                        <form class="" action="/routine/status/<?= $routine->id ?>/1" method="post">
                                                             <div class="form-group" id="amount">
                                                                 <label for="amount">Ilość</label>
-                                                                <input type="text" class="form-control" name="amount" id="amount" value="">
+                                                                <input type="number" step="0.01" class="form-control" name="amount" id="amount" value="">
                                                             </div>
                                                             <button type="submit" class="btn btn-success">Zmień</button>
                                                         </form>
