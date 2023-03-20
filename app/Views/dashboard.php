@@ -37,9 +37,22 @@
                                                     ?>
                                                 </td>
                                                 <td>
+
                                                     <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
                                                         Wykonano
                                                     </a>
+
+                                                    <form>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                            <label class="form-check-label" for="exampleCheck1">Ilość</label>
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Wykonano 2</button>
+                                                    </form>
+
+
+
+
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>
