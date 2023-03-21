@@ -10,8 +10,10 @@ class Charts extends BaseController
     {
         $data = [];
 
+        $db = db_connect();
+        $model = new RoutineRepository($db);
 
-        //get data for charts, from history from there where is amount
+        $routines = $model->getRoutinesForCharts(session()->get('id'));
 
 
 

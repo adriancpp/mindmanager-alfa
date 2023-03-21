@@ -54,4 +54,12 @@ class RoutineRepository
 
             ->get()->getResult();
     }
+
+    function getRoutinesForCharts($routineId)
+    {
+        //"SELECT * FROM posts";
+        return $this->db->table('routine_history')
+            // and lets gooo <<<----
+            ->get()->getFirstRow('array');
+    }
 }
