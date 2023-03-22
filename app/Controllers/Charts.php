@@ -15,6 +15,18 @@ class Charts extends BaseController
 
         $routines = $model->getRoutinesForCharts(session()->get('id'));
 
+        //select routine name
+
+        //routine
+            // routine historu
+                // Dni []
+                // Value []
+
+
+                echo '<pre>';
+                print_r($routines);
+                echo '</pre>';
+
 
 
         echo view('templates/header', $data);

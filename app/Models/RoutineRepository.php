@@ -55,11 +55,22 @@ class RoutineRepository
             ->get()->getResult();
     }
 
-    function getRoutinesForCharts($routineId)
+    function getRoutinesForCharts($userId)
     {
-        //"SELECT * FROM posts";
-        return $this->db->table('routine_history')
-            // and lets gooo <<<----
-            ->get()->getFirstRow('array');
+        return $this->db->table('routine')
+            ->select('routine.id as id, routine.name, routine_history.id as rhId, 
+                        routine.type as type, routine_history.status as status, routine.priority as priority, 
+                        routine_history.value as amount, routine_history.updated_at as day')
+            ->join('routine_history', 'routine.id = routine_history.routine_id 
+                    
+                    ' , 'left')
+            ->where(['routine.user_id' => $userId])
+            ->where(['routine.active' => 1])
+            ->where(['routine.type' => "COUNT"])
+            ->where(['routine_history.id !=' => null])
+            ->orderBy('day', 'ASC')
+
+
+            ->get()->getResult();
     }
 }
