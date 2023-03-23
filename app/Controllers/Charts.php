@@ -15,6 +15,21 @@ class Charts extends BaseController
 
         $routines = $model->getRoutinesForCharts(session()->get('id'));
 
+        $singleRoutines = [];
+
+        echo $routines[0]->id;
+
+        foreach($routines as $routine)
+        {
+            if(!in_array($routine->id, $singleRoutines))
+                $singleRoutines[] = $routine->id;
+        }
+
+        foreach($routines as $routine)
+        {
+            //and there routine buld
+        }
+
         //select routine name
 
         //routine
