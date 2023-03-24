@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\RoutineRepository;
+use stdClass;
 
 class Charts extends BaseController
 {
@@ -15,18 +16,34 @@ class Charts extends BaseController
 
         $routines = $model->getRoutinesForCharts(session()->get('id'));
 
-        $singleRoutines = [];
+        $sortedRoutines = [];
 
         echo $routines[0]->id;
 
         foreach($routines as $routine)
         {
-            if(!in_array($routine->id, $singleRoutines))
-                $singleRoutines[] = $routine->id;
+            if(!array_key_exists($routine->id, $sortedRoutines))
+            {
+                $singleRoutine = new stdClass();
+                $singleRoutine->id = $routine->id;
+                $singleRoutine->name = $routine->name;
+                $singleRoutine->data = []; //there will be array of element for chart
+
+                $sortedRoutines[$routine->id] = $singleRoutine;
+            }
+            else
+            {
+                //next part
+                $sortedRoutines[$routine->id]->data[] = 2;
+                // tutaj moge dodac daty przeciez teraz na ez
+            }
         }
+
+        //ned print sorted routines    !!!!!!!!!!!
 
         foreach($routines as $routine)
         {
+            //if($routine->id == )
             //and there routine buld
         }
 
@@ -41,6 +58,12 @@ class Charts extends BaseController
                 echo '<pre>';
                 print_r($routines);
                 echo '</pre>';
+
+                echo '<br>===============<br>';
+
+        echo '<pre>';
+        print_r($sortedRoutines);
+        echo '</pre>';
 
 
 
