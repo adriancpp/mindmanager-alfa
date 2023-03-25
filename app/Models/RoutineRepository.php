@@ -60,7 +60,11 @@ class RoutineRepository
         return $this->db->table('routine')
             ->select('routine.id as id, routine.name, routine_history.id as rhId, 
                         routine.type as type, routine_history.status as status, routine.priority as priority, 
-                        routine_history.value as amount, routine_history.updated_at as day')
+                        routine_history.value as amount, 
+                        
+                        CAST(routine_history.updated_at As Date) as day
+                        
+                        ')
             ->join('routine_history', 'routine.id = routine_history.routine_id 
                     
                     ' , 'left')
@@ -68,7 +72,7 @@ class RoutineRepository
             ->where(['routine.active' => 1])
             ->where(['routine.type' => "COUNT"])
             ->where(['routine_history.id !=' => null])
-            ->orderBy('day', 'ASC')
+            ->orderBy('routine_history.updated_at', 'ASC')
 
 
             ->get()->getResult();

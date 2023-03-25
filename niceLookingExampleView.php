@@ -18,6 +18,8 @@
 
 
 
+<div><?= $locale ?></div>
+<div><?= lang('Dashboard.title') ?></div>
 
 
 <ul class="navbar-nav my-2 my-lg-0">

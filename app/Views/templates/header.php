@@ -20,32 +20,32 @@
                 <?php if(session()->get('isLoggedIn')): ?>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item <?= ($uri->getSegment(1) == 'dashboard' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/dashboard">Strona główna</a>
+                            <a class="nav-link" href="/dashboard"><?= lang('main.nav_mainPage') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/routine">Rutynowe</a>
+                            <a class="nav-link" href="/routine"><?= lang('main.nav_routines') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/routine">Streak</a>
+                            <a class="nav-link" href="/routine"><?= lang('main.nav_streak') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/charts">Wykresy</a>
+                            <a class="nav-link" href="/charts"><?= lang('main.nav_charts') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/profile">Profil</a>
+                            <a class="nav-link" href="/profile"><?= lang('main.nav_profile') ?></a>
                         </li>
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('lang/en'); ?>">English</a>
+                            <a class="nav-link" href="<?= base_url('lang/en'); ?>"><?= lang('main.nav_lang_en') ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('lang/pl'); ?>">PL</a>
+                            <a class="nav-link" href="<?= base_url('lang/pl'); ?>"><?= lang('main.nav_lang_pl') ?></a>
                         </li>
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">Wyloguj</a>
+                            <a class="nav-link" href="/logout"><?= lang('main.nav_logout') ?></a>
                         </li>
                     </ul>
                 <?php else: ?>

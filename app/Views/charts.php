@@ -3,59 +3,32 @@
         <div class="col-12 mb-5">
             <h1>Witaj, <?= session()->get('nickname') ?></h1>
         </div>
-
-        charts
-
-
-        <?php
-
-                echo '<pre>';
-                print_r($allRoutines[2]->data);
-                echo '</pre>';
-
-                $dataPoints = $allRoutines[2]->data;
-
-//        $dataPoints = array(
-//            array("y" => 25, "label" => "Sunday"),
-//            array("y" => 15, "label" => "Monday"),
-//            array("y" => 25, "label" => "Tuesday"),
-//            array("y" => 5, "label" => "Wednesday"),
-//            array("y" => 10, "label" => "Thursday"),
-//            array("y" => 0, "label" => "Friday"),
-//            array("y" => 20, "label" => "Saturday")
-//        );
-
-//        echo '<br>------------<br>';
-//
-//        echo '<pre>';
-//        print_r($dataPoints);
-//        echo '</pre>';
-
-        ?>
-
             <script>
                 window.onload = function () {
-
-                    var chart = new CanvasJS.Chart("chartContainer", {
-                        title: {
-                            text: "Push-ups Over a Week"
-                        },
-                        axisY: {
-                            title: "Number of Push-ups"
-                        },
-                        data: [{
-                            type: "line",
-                            dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
-                        }]
-                    });
-                    chart.render();
-
+                    <?php foreach ($allRoutines as $routine): ?>
+                        var chart<?= $routine->id ?> = new CanvasJS.Chart("chartContainer<?= $routine->id ?>", {
+                            title: {
+                                text: <?= $routine->id ?>
+                            },
+                            axisY: {
+                                title: "Ilość"
+                            },
+                            data: [{
+                                type: "line",
+                                dataPoints: <?php echo json_encode($routine->data, JSON_NUMERIC_CHECK); ?>
+                            }]
+                        });
+                        chart<?= $routine->id ?>.render();
+                    <?php endforeach; ?>
                 }
             </script>
 
-        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <?php foreach ($allRoutines as $routine): ?>
+            <div id="chartContainer<?= $routine->id ?>" style="height: 370px; width: 100%;"></div>
+            <div style="margin: 10px;"></div>
+        <?php endforeach; ?>
 
+        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     </div>
 </div>

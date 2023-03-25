@@ -44,7 +44,7 @@
                                                                 <input type="number" step="0.01" class="form-control" name="amount"
                                                                        id="amount" value="<?= $routine->amount ?>">
                                                             </div>
-                                                            <button type="submit" class="btn btn-success">Zmień</button>
+                                                            <button type="submit" class="btn btn-success">Wykonano</button>
                                                         </form>
                                                     <?php else: ?>
                                                         <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
@@ -90,9 +90,20 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
-                                                        Wykonano
-                                                    </a>
+                                                    <?php if($routine->type == "COUNT"): ?>
+                                                        <form class="" action="/routine/status/<?= $routine->id ?>/1" method="post">
+                                                            <div class="form-group" id="amount">
+                                                                <label for="amount">Ilość</label>
+                                                                <input type="number" step="0.01" class="form-control" name="amount"
+                                                                       id="amount" value="<?= $routine->amount ?>">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-success">Wykonano</button>
+                                                        </form>
+                                                    <?php else: ?>
+                                                        <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
+                                                            Wykonano
+                                                        </a>
+                                                    <?php endif; ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach ?>
@@ -135,9 +146,20 @@
                                             ?>
                                         </td>
                                         <td>
-                                            <a href="/routine/status/<?= $routine->id ?>/0" class="btn btn-danger">
-                                                Anuluj
-                                            </a>
+                                            <?php if($routine->type == "COUNT"): ?>
+                                                <form class="" action="/routine/status/<?= $routine->id ?>/0" method="post">
+                                                    <div class="form-group" id="amount">
+                                                        <label for="amount">Ilość</label>
+                                                        <input type="number" step="0.01" class="form-control" name="amount"
+                                                               id="amount" value="<?= $routine->amount ?>">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-danger">Anuluj</button>
+                                                </form>
+                                            <?php else: ?>
+                                                <a href="/routine/status/<?= $routine->id ?>/0" class="btn btn-danger">
+                                                    Anuluj
+                                                </a>
+                                            <?php endif; ?>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>

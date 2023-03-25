@@ -2,8 +2,8 @@
 
 return [
     'title' => "Mind Manager",
-    'nav_mainPage' => "Strona główna",
-    'nav_routines' => "Rutynowe",
+    'nav_mainPage' => "Main page",
+    'nav_routines' => "Routines",
     'nav_streak' => "Streak",
     'nav_charts' => "Charts",
     'nav_profile' => "Profile",
