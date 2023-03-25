@@ -8,7 +8,7 @@
                     <?php foreach ($allRoutines as $routine): ?>
                         var chart<?= $routine->id ?> = new CanvasJS.Chart("chartContainer<?= $routine->id ?>", {
                             title: {
-                                text: <?= $routine->id ?>
+                                text: "<?= $routine->name ?>"
                             },
                             axisY: {
                                 title: "Ilość"
