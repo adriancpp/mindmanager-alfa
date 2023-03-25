@@ -18,8 +18,6 @@ class Charts extends BaseController
 
         $sortedRoutines = [];
 
-        echo $routines[0]->id;
-
         foreach($routines as $routine)
         {
             if(!array_key_exists($routine->id, $sortedRoutines))
@@ -27,44 +25,22 @@ class Charts extends BaseController
                 $singleRoutine = new stdClass();
                 $singleRoutine->id = $routine->id;
                 $singleRoutine->name = $routine->name;
-                $singleRoutine->data = []; //there will be array of element for chart
+                $singleRoutine->title = $routine->name;
+                $singleRoutine->text = "Ilość";
+                $singleRoutine->data = [];
 
                 $sortedRoutines[$routine->id] = $singleRoutine;
             }
-            else
-            {
-                //next part
-                $sortedRoutines[$routine->id]->data[] = 2;
-                // tutaj moge dodac daty przeciez teraz na ez
-            }
+
+            $dataArr = [];
+
+            $dataArr['y'] = $routine->amount;
+            $dataArr['label'] = $routine->day;
+
+            $sortedRoutines[$routine->id]->data[] = $dataArr;
         }
 
-        //ned print sorted routines    !!!!!!!!!!!
-
-        foreach($routines as $routine)
-        {
-            //if($routine->id == )
-            //and there routine buld
-        }
-
-        //select routine name
-
-        //routine
-            // routine historu
-                // Dni []
-                // Value []
-
-
-                echo '<pre>';
-                print_r($routines);
-                echo '</pre>';
-
-                echo '<br>===============<br>';
-
-        echo '<pre>';
-        print_r($sortedRoutines);
-        echo '</pre>';
-
+        $data['allRoutines'] = $sortedRoutines;
 
 
         echo view('templates/header', $data);
