@@ -44,9 +44,15 @@
                                                     <span class="glyphicon glyphicon-pencil">Edytuj</span>
 
                                             </a>
-                                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                                <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
-                                            </button>
+                                            <?php if($routine->active == 1): ?>
+                                                <button type="button" class="btn btn-danger btn-xs">
+                                                    <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
+                                                </button>
+                                            <?php else: ?>
+                                                <button type="button" class="btn btn-success btn-xs">
+                                                    <span class="glyphicon glyphicon-trash">Aktywuj</span>
+                                                </button>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </div>

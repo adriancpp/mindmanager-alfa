@@ -20,6 +20,10 @@ class Routine extends BaseController
 
         $result = $model->all(session()->get('id'));
 
+//        echo '<pre>';
+//        print_r($result);
+//        echo '</pre>';
+
         $data['routines'] = $result;
 
         echo view('templates/header', $data);
