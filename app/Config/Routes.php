@@ -16,7 +16,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Home');
+$routes->setDefaultController('Dashboard');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -53,6 +53,9 @@ $routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth
     $routes->match(['get','post'],'/routine/status/(:any)/(:any)', 'Routine::changeRoutineStatus/$1/$2', ['filter' => 'auth']);
 
     $routes->get('charts', [Charts::class, 'index'], ['filter' => 'auth']);
+
+    //friends
+    $routes->match(['get','post'],'/friends', 'UserFriend::index', ['filter' => 'auth']);
 
 $routes->get('/lang/{locale}', 'Language::index');
 /*
