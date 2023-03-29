@@ -38,21 +38,23 @@
                                         <div>
                                             <h4 class="card-title"><?= $routine->name ?></h4> [streak: 0dni]
                                         </div>
-                                        <div class="action">
-                                            <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-primary">
-
-                                                    <span class="glyphicon glyphicon-pencil">Edytuj</span>
-
-                                            </a>
-                                            <?php if($routine->active == 1): ?>
-                                                <button type="button" class="btn btn-danger btn-xs">
-                                                    <span class="glyphicon glyphicon-trash">Dezaktywuj</span>
-                                                </button>
-                                            <?php else: ?>
-                                                <button type="button" class="btn btn-success btn-xs">
-                                                    <span class="glyphicon glyphicon-trash">Aktywuj</span>
-                                                </button>
-                                            <?php endif; ?>
+                                        <div class="container">
+                                            <div class="row">
+                                                <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-primary">Edytuj</a>
+                                                <?php if($routine->active == 1): ?>
+                                                    <form class="" action="/routine/active" method="post">
+                                                        <input type="hidden" name="id" value="<?= $routine->id ?>">
+                                                        <input type="hidden" name="status" value="0">
+                                                        <button type="submit" class="btn btn-danger">Dezaktywuj</button>
+                                                    </form>
+                                                <?php else: ?>
+                                                    <form class="" action="/routine/active" method="post">
+                                                        <input type="hidden" name="id" value="<?= $routine->id ?>">
+                                                        <input type="hidden" name="status" value="1">
+                                                        <button type="submit" class="btn btn-success">Aktywuj</button>
+                                                    </form>
+                                                <?php endif; ?>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

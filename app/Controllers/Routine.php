@@ -246,4 +246,35 @@ class Routine extends BaseController
 
         return redirect()->to('/dashboard');
     }
+
+    public function setActive()
+    {
+        if($this->request->getMethod() == 'post')
+        {
+            $id = $this->request->getVar('id');
+            $status = $this->request->getVar('status');
+
+            $db = db_connect();
+
+            $model = new RoutineRepository($db);
+            //secure for not owner id paste
+            if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $id)))
+                return redirect()->to('/dashboard');
+
+            $routineModel = new RoutineModel();
+            $routine = $routineModel->find($id);
+
+            if($routine)
+            {
+                $newData = [
+                    'id' => $id,
+                    'active' => $status
+                ];
+
+                $routineModel->save($newData);
+            }
+        }
+
+        return redirect()->to('/routine');
+    }
 }
