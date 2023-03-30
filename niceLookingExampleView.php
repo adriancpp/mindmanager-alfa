@@ -62,3 +62,12 @@
         Gotowe
     </div>
 </div>
+
+
+
+Anyway u guys.
+Always remeber
+
+At the end of the day is night
+and every little thing is gonna be alright
+If its not alright, its not the end.
