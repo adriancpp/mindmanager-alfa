@@ -58,6 +58,7 @@ $routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth
     //friends
     $routes->match(['get','post'],'/friends', 'UserFriend::index', ['filter' => 'auth']);
     $routes->match(['get','post'],'/friends/send/invite', 'UserFriend::sendInvite', ['filter' => 'auth']);
+    $routes->match(['get','post'],'/friends/accept', 'UserFriend::accept', ['filter' => 'auth']);
 
 $routes->get('/lang/{locale}', 'Language::index');
 /*

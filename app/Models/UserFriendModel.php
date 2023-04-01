@@ -14,7 +14,6 @@ class UserFriendModel extends Model
     - 2 - admin
      */
     protected $allowedFields = ['user1_id', 'user2_id', 'confirmed'];
-    protected $useTimestamps = true;
 
     protected $beforeInsert = ['beforeInsert'];
     protected $beforeUpdate = ['beforeUpdate'];
