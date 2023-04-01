@@ -2,6 +2,14 @@
 
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
+            <h4>1.04.2023</h4>
+            <p>- adding friends!</p>
+            <p>(Profil->Znajomi)</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
             <h4>29.03.2023</h4>
             <p>- poprawione i naprawione dezaktywowanie rutyn z listy - bez wchodzenia w edycje</p>
         </div>

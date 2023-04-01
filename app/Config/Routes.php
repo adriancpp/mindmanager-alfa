@@ -60,6 +60,8 @@ $routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth
     $routes->match(['get','post'],'/friends/send/invite', 'UserFriend::sendInvite', ['filter' => 'auth']);
     $routes->match(['get','post'],'/friends/accept', 'UserFriend::accept', ['filter' => 'auth']);
 
+    $routes->match(['get','post'],'/chart/friend/(:any)', 'Charts::friend/$1', ['filter' => 'auth']);
+
 $routes->get('/lang/{locale}', 'Language::index');
 /*
  * --------------------------------------------------------------------

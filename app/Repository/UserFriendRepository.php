@@ -16,14 +16,73 @@ class UserFriendRepository
         $user1_id = $this->db->escape($userId);
 
         $where = "
-            (user1_id={$user1_id}) OR (user2_id={$user1_id})
+            user1_id={$user1_id}
         ";
         //"SELECT * FROM posts";
-        return $this->db->table('user_friend')
-            ->select('user_friend.*, user.login as friend_name')
-            ->join('user', 'user.id = user_friend.user2_id')
+        $res1 = $this->db->table('user_friend')
+            ->select('user_friend.*, user.login as friend_name, user.id as friend_id')
+            ->join('user', '
+            user.id = user_friend.user2_id
+            ')
             ->where($where)
             ->get()->getResult();
+
+        $user1_id = $this->db->escape($userId);
+
+        $where = "
+            user2_id={$user1_id}
+        ";
+        //"SELECT * FROM posts";
+        $res2 = $this->db->table('user_friend')
+            ->select('user_friend.*, user.login as friend_name, user.id as friend_id')
+            ->join('user', '
+            user.id = user_friend.user1_id
+            ')
+            ->where($where)
+            ->get()->getResult();
+
+        $result = array_merge($res1,$res2);
+
+
+        return $result;
+    }
+
+    function allConfirmed($userId)
+    {
+        $user1_id = $this->db->escape($userId);
+
+        $where = "
+            user1_id={$user1_id}
+            AND confirmed=1
+        ";
+        //"SELECT * FROM posts";
+        $res1 = $this->db->table('user_friend')
+            ->select('user_friend.*, user.login as friend_name, user.id as friend_id')
+            ->join('user', '
+            user.id = user_friend.user2_id
+            ')
+            ->where($where)
+            ->get()->getResult();
+
+        $user1_id = $this->db->escape($userId);
+
+        $where = "
+            user2_id={$user1_id}
+            AND confirmed=1
+        ";
+        //"SELECT * FROM posts";
+        $res2 = $this->db->table('user_friend')
+            ->select('user_friend.*, user.login as friend_name, user.id as friend_id')
+            ->join('user', '
+            user.id = user_friend.user1_id
+            ')
+            ->where($where)
+            ->get()->getResult();
+
+        $result = array_merge($res1,$res2);
+
+
+        return $result;
     }
 
     function findInvite($user1_id, $user2_id)

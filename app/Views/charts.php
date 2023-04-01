@@ -3,6 +3,11 @@
         <div class="col-12 mb-5">
             <h1>Witaj, <?= session()->get('nickname') ?></h1>
         </div>
+        <div class="col-12 mb-5">
+            <?php foreach ($friends as $friend): ?>
+                <a href="/chart/friend/<?= $friend->friend_id ?>"><button><?= $friend->friend_name ?></button></a>
+            <?php endforeach; ?>
+        </div>
             <script>
                 window.onload = function () {
                     <?php foreach ($allRoutines as $routine): ?>
