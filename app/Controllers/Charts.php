@@ -66,33 +66,42 @@ class Charts extends BaseController
         $routines = $model->getRoutinesForCharts($friendId);
 
         $friendsModel = new UserFriendRepository($db);
-        $data['friends'] = $friendsModel->allConfirmed(session()->get('id'));
 
-        $sortedRoutines = [];
-
-        foreach($routines as $routine)
+        if($friendsModel->allConfirmed(session()->get('id')) )
         {
-            if(!array_key_exists($routine->id, $sortedRoutines))
-            {
-                $singleRoutine = new stdClass();
-                $singleRoutine->id = $routine->id;
-                $singleRoutine->name = $routine->name;
-                $singleRoutine->title = $routine->name;
-                $singleRoutine->text = "Ilość";
-                $singleRoutine->data = [];
+            $data['friends'] = $friendsModel->allConfirmed(session()->get('id'));
 
-                $sortedRoutines[$routine->id] = $singleRoutine;
+            $sortedRoutines = [];
+
+            foreach($routines as $routine)
+            {
+                if(!array_key_exists($routine->id, $sortedRoutines))
+                {
+                    $singleRoutine = new stdClass();
+                    $singleRoutine->id = $routine->id;
+                    $singleRoutine->name = $routine->name;
+                    $singleRoutine->title = $routine->name;
+                    $singleRoutine->text = "Ilość";
+                    $singleRoutine->data = [];
+
+                    $sortedRoutines[$routine->id] = $singleRoutine;
+                }
+
+                $dataArr = [];
+
+                $dataArr['y'] = $routine->amount;
+                $dataArr['label'] = $routine->day;
+
+                $sortedRoutines[$routine->id]->data[] = $dataArr;
             }
 
-            $dataArr = [];
-
-            $dataArr['y'] = $routine->amount;
-            $dataArr['label'] = $routine->day;
-
-            $sortedRoutines[$routine->id]->data[] = $dataArr;
+            $data['allRoutines'] = $sortedRoutines;
         }
-
-        $data['allRoutines'] = $sortedRoutines;
+        else
+        {
+            $data['friends'] = [];
+            $data['allRoutines'] = [];
+        }
 
 
         echo view('templates/header', $data);
