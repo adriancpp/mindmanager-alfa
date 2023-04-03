@@ -78,6 +78,18 @@
                         </div>
                     </div>
                 </form>
+
+                <hr>
+                <details>
+                    <summary>Dodatkowe Opcje</summary>
+                    <form class="" action="/routine/active" method="post">
+                        <input type="hidden" name="id" value="">
+                        <input type="hidden" name="status" value="0">
+                        <button type="submit" class="btn btn-danger">Usuń rutynę wraz z historią (nie można cofnąć!)</button>
+                    </form>
+                </details>
+
+
             </div>
         </div>
     </div>
