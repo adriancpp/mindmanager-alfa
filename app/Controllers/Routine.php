@@ -277,4 +277,11 @@ class Routine extends BaseController
 
         return redirect()->to('/routine');
     }
+
+    public function deleteRoutine($routineId)
+    {
+        //check if user is owner!!!
+
+        echo 'deleted';
+    }
 }
