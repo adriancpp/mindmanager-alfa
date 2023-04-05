@@ -82,10 +82,7 @@
                 <hr>
                 <details>
                     <summary>Dodatkowe Opcje</summary>
-                    <?php
-
-                    echo "<td><a class='btn btn-danger' onClick=\"javascript: return confirm('Please confirm deletion');\" href='/routine/delete/2'>Usuń rutynę wraz z historią (nie można cofnąć!)</a></td><tr>";
-                    ?>
+                    <td><a class='btn btn-danger' onClick="javascript: return confirm('Please confirm deletion');" href='/routine/delete/<?= $routine['id'] ?>'>Usuń rutynę wraz z historią (nie można cofnąć!)</a></td><tr>
                 </details>
 
 

@@ -280,7 +280,10 @@ class Routine extends BaseController
 
     public function deleteRoutine($routineId)
     {
+        $db = db_connect();
         $model = new RoutineRepository($db);
+
+        echo 'well';
 
         if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $routineId)))
             return redirect()->to('/dashboard');
