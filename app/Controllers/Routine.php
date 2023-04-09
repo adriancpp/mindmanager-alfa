@@ -288,8 +288,9 @@ class Routine extends BaseController
         if(empty($model->ifUserIsRoutineOwner(session()->get('id'), $routineId)))
             return redirect()->to('/dashboard');
 
-        //there add deleting query of all routine histories and routines
-        // !!!
+        // there need routine history delete
+
+        $model->deleteRoutine($routineId);
 
         echo 'deleted';
     }

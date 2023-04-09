@@ -77,4 +77,12 @@ class RoutineRepository
 
             ->get()->getResult();
     }
+
+    function deleteRoutine($routineId)
+    {
+        $builder = $this->db->table('routine');
+
+        $builder->where('id', $routineId);
+        $builder->delete();
+    }
 }
