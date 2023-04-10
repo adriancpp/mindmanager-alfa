@@ -80,6 +80,13 @@ class RoutineRepository
 
     function deleteRoutine($routineId)
     {
+        //delete history
+        $builder = $this->db->table('routine_history');
+
+        $builder->where('routine_id', $routineId);
+        $builder->delete();
+
+        //delete rouitne
         $builder = $this->db->table('routine');
 
         $builder->where('id', $routineId);
