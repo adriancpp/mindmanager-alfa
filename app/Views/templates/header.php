@@ -59,10 +59,10 @@
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('lang/en'); ?>">English</a>
+                            <a class="nav-link" href="<?= base_url('lang/en'); ?>"><?= lang('main.nav_lang_en') ?></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('lang/pl'); ?>">PL</a>
+                            <a class="nav-link" href="<?= base_url('lang/pl'); ?>"><?= lang('main.nav_lang_pl') ?></a>
                         </li>
                     </ul>
                 <?php endif; ?>
