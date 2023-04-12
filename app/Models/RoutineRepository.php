@@ -16,6 +16,7 @@ class RoutineRepository
         //"SELECT * FROM posts";
         return $this->db->table('routine')
             ->where(['user_id' => $userId])
+            ->orderBy('routine.sort', 'ASC')
             ->get()->getResult();
     }
 
@@ -52,6 +53,7 @@ class RoutineRepository
             ->where(['routine.user_id' => $userId])
             ->where(['routine.active' => 1])
 
+            ->orderBy('routine.sort', 'ASC')
             ->get()->getResult();
     }
 
