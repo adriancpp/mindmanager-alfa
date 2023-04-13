@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mb-5">
-            <h1>Witaj, <?= session()->get('nickname') ?></h1>
+            <h1><?= lang('dashboard.welcome') ?>, <?= session()->get('nickname') ?></h1>
         </div>
 
         <div class="row">
@@ -9,7 +9,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5" style="width: 100%">
-                            <h4>Aktualne</h4>
+                            <h4><?= lang('dashboard.current') ?></h4>
                             <div class="table-wrapper" style="width: 100%">
                                 <div class="table-wrapper">
                                     <table class="table table-hover table-bordered table-light">
@@ -62,7 +62,7 @@
                     </div>
                     <div class="row">
                         <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5" style="width: 100%">
-                            <h4>Następne</h4>
+                            <h4><?= lang('dashboard.next') ?></h4>
                             <div class="table-wrapper" style="width: 100%">
                                 <div class="table-wrapper">
                                     <table class="table table-hover table-bordered table-light">
@@ -118,7 +118,7 @@
 
             <div class="col-md-6">
                 <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5" style="width: 100%">
-                    <h4>Zrobione</h4>
+                    <h4><?= lang('dashboard.done') ?></h4>
                     <div class="table-wrapper" style="width: 100%">
                         <div class="table-wrapper">
                             <table class="table table-hover table-bordered table-light">
