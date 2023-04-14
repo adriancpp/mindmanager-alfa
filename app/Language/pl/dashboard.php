@@ -6,8 +6,8 @@ return [
     'next' => "Następne",
     'done' => "Zrobione",
 
-    'done' => "Priorytet",
-    'done' => "Nazwa",
-    'done' => "Status",
-    'done' => "Akcje",
+    'table_priority' => "Priorytet",
+    'table_name' => "Nazwa",
+    'table_status' => "Status",
+    'table_actions' => "Akcje",
 ];

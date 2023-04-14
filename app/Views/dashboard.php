@@ -15,10 +15,10 @@
                                     <table class="table table-hover table-bordered table-light">
                                         <thead>
                                         <tr>
-                                            <th style="width: 10% !important;">Priorytet</th>
-                                            <th style="width: 70% !important;">Nazwa</th>
-                                            <th style="width: 10% !important;">Status</th>
-                                            <th style="width: 10% !important;">Akcje</th>
+                                            <th style="width: 10% !important;"><?= lang('dashboard.table_priority') ?></th>
+                                            <th style="width: 70% !important;"><?= lang('dashboard.table_name') ?></th>
+                                            <th style="width: 10% !important;"><?= lang('dashboard.table_status') ?></th>
+                                            <th style="width: 10% !important;"><?= lang('dashboard.table_actions') ?></th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -68,10 +68,10 @@
                                     <table class="table table-hover table-bordered table-light">
                                         <thead>
                                         <tr>
-                                            <th>Priorytet</th>
-                                            <th>Nazwa</th>
-                                            <th>Status</th>
-                                            <th>Akcje</th>
+                                            <th style="width: 10% !important;"><?= lang('dashboard.table_priority') ?></th>
+                                            <th style="width: 70% !important;"><?= lang('dashboard.table_name') ?></th>
+                                            <th style="width: 10% !important;"><?= lang('dashboard.table_status') ?></th>
+                                            <th style="width: 10% !important;"><?= lang('dashboard.table_actions') ?></th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -124,10 +124,10 @@
                             <table class="table table-hover table-bordered table-light">
                                 <thead>
                                 <tr>
-                                    <th>Priorytet</th>
-                                    <th>Nazwa</th>
-                                    <th>Status</th>
-                                    <th>Akcje</th>
+                                    <th style="width: 10% !important;"><?= lang('dashboard.table_priority') ?></th>
+                                    <th style="width: 70% !important;"><?= lang('dashboard.table_name') ?></th>
+                                    <th style="width: 10% !important;"><?= lang('dashboard.table_status') ?></th>
+                                    <th style="width: 10% !important;"><?= lang('dashboard.table_actions') ?></th>
                                 </tr>
                                 </thead>
                                 <tbody>
