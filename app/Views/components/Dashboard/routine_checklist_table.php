@@ -1,3 +1,11 @@
+
+<!--- example -->
+<?php foreach ($posts as $post) : ?>
+
+    <?= view_cell('\App\Libraries\Blog::postItem', ['title' => $post]) ?>
+<?php endforeach; ?>
+<!--- example -->
+
 <div class="row">
     <div class="app-container d-flex align-items-center justify-content-center flex-column ps-5" style="width: 100%">
         <h4><?= lang('dashboard.current') ?></h4>
