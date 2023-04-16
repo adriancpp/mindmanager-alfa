@@ -2,7 +2,7 @@
 
 class Dashboard{
 
-    public function postItem($params){
-        return view('components/post_item', $params);
+    public function routineChecklistTable($params){
+        return view('components/Dashboard/routine_checklist_table', $params);
     }
 }

@@ -170,6 +170,8 @@
                 </div>
             </div>
 
+            <?= view_cell('\App\Libraries\Dashboard::routineChecklistTable', ['routines' => $routines['current']]) ?>
+
 
         </div>
 
