@@ -74,6 +74,7 @@ class RoutineRepository
             ->where(['routine.active' => 1])
             ->where(['routine.type' => "COUNT"])
             ->where(['routine_history.id !=' => null])
+            ->where(['routine_history.status' => 1])
             ->orderBy('routine_history.updated_at', 'ASC')
 
 
