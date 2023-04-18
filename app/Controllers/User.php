@@ -184,4 +184,9 @@ class User extends BaseController
         session()->destroy();
         return redirect()->to('/');
     }
+
+    public function saveSelectedLanguage()
+    {
+        return 0;
+    }
 }

@@ -30,24 +30,24 @@
                             <?php if($routine->type == "COUNT"): ?>
                                 <form class="" action="/routine/status/<?= $routine->id ?>/<?= $submitStatus ?>" method="post">
                                     <div class="form-group" id="amount">
-                                        <label for="amount">Ilość</label>
+                                        <label for="amount"><?= lang('dashboard.table_amount') ?></label>
                                         <input type="number" step="0.01" class="form-control" name="amount"
                                                id="amount" value="<?= $routine->amount ?>">
                                     </div>
                                     <?php if($submitStatus == 1): ?>
-                                        <button type="submit" class="btn btn-success">Wykonano</button>
+                                        <button type="submit" class="btn btn-success"><?= lang('dashboard.table_button_done') ?></button>
                                     <?php else: ?>
-                                        <button type="submit" class="btn btn-danger">Anuluj</button>
+                                        <button type="submit" class="btn btn-danger"><?= lang('dashboard.table_button_cancel') ?></button>
                                     <?php endif; ?>
                                 </form>
                             <?php else: ?>
                                 <?php if($submitStatus == 1): ?>
                                     <a href="/routine/status/<?= $routine->id ?>/1" class="btn btn-success">
-                                        Wykonano
+                                        <?= lang('dashboard.table_button_done') ?>
                                     </a>
                                 <?php else: ?>
                                     <a href="/routine/status/<?= $routine->id ?>/0" class="btn btn-danger">
-                                        Anuluj
+                                        <?= lang('dashboard.table_button_cancel') ?>
                                     </a>
                                 <?php endif; ?>
                             <?php endif; ?>

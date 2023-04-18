@@ -10,4 +10,8 @@ return [
     'table_name' => "Nazwa",
     'table_status' => "Status",
     'table_actions' => "Akcje",
+    'table_amount' => "Ilość",
+
+    'table_button_done' => "Wykonano",
+    'table_button_cancel' => "Anuluj",
 ];
