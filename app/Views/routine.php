@@ -21,7 +21,7 @@
                         <div class="col-lg-12">
                             <h3 class="one">Rutynowe</h3>
                             <a href="/routine/new">
-                                <button class="btn btn-success float-right">Dodaj nowy</button>
+                                <button class="btn btn-success float-right"><?= lang('routine.button_add_new') ?></button>
                             </a>
                         </div>
                     </div>
@@ -40,18 +40,18 @@
                                         </div>
                                         <div class="container">
                                             <div class="row">
-                                                <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-primary">Edytuj</a>
+                                                <a href="/routine/edit/<?= $routine->id ?>" class="btn btn-primary"><?= lang('routine.button_edit') ?></a>
                                                 <?php if($routine->active == 1): ?>
                                                     <form class="" action="/routine/active" method="post">
                                                         <input type="hidden" name="id" value="<?= $routine->id ?>">
                                                         <input type="hidden" name="status" value="0">
-                                                        <button type="submit" class="btn btn-danger">Dezaktywuj</button>
+                                                        <button type="submit" class="btn btn-danger"><?= lang('routine.button_deactivate') ?></button>
                                                     </form>
                                                 <?php else: ?>
                                                     <form class="" action="/routine/active" method="post">
                                                         <input type="hidden" name="id" value="<?= $routine->id ?>">
                                                         <input type="hidden" name="status" value="1">
-                                                        <button type="submit" class="btn btn-success">Aktywuj</button>
+                                                        <button type="submit" class="btn btn-success"><?= lang('routine.button_activate') ?></button>
                                                     </form>
                                                 <?php endif; ?>
                                             </div>
