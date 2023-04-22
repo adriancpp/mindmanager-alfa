@@ -2,7 +2,18 @@
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
             <div class="container">
-                <h3>Nowe zadanie</h3>
+                <div class="row">
+                    <div class="column">
+                        <h3>Nowe zadanie</h3>
+                    </div>
+                    <div class="column"> 
+                        <?= view_cell('\App\Libraries\Routine::newRoutineHelpPopup', [
+                                'b' => 2,
+                                'a' => 1
+                            ]
+                        ) ?>
+                    </div>
+                </div>
                 <hr>
                 <form class="" action="/routine/new" method="post">
                     <div class="row">
