@@ -71,3 +71,24 @@ Always remeber
 At the end of the day is night
 and every little thing is gonna be alright
 If its not alright, its not the end.
+
+
+
+///one diev max left one max right
+<div class="d-flex justify-content-between">
+    <div>
+        left
+    </div>
+    <div>
+        right
+    </div>
+</div>
+
+<div class="d-flex">
+    <div>
+        left
+    </div>
+    <div class="ml-auto">
+        right
+    </div>
+</div>
