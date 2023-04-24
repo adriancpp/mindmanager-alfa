@@ -58,6 +58,20 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
+
+                            <style>
+                                .vl {
+                                    border-left: 2px solid dimgray;
+                                    height: 40px;
+                                }
+                            </style>
+
+                        <div class="vl"></div>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'changelog' ? 'active' : null) ?>">
+                            <a class="nav-link" href="/changelog">Changelog</a>
+                        </li>
+                        <div class="vl"></div>
+
                         <li class="nav-item">
                             <a class="nav-link" href="<?= base_url('lang/en'); ?>"><?= lang('main.nav_lang_en') ?></a>
                         </li>

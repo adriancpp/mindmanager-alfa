@@ -2,6 +2,17 @@
 
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
+            <h4>24.04.2023</h4>
+            <p>- from now on, the default page is the login page</p>
+            <p>- changelog moved to a separate tab</p>
+            <p>- added many new gui translations</p>
+            <p>- fixed bug with showing canceled day on the chart</p>
+            <p>- test, preliminary version of the description of functionality in the form of help "<font color="#6495ed">(?)</font>"</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
             <h4>12.04.2023</h4>
             <p>- routine sort function</p>
         </div>

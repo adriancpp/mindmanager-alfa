@@ -2,6 +2,17 @@
 
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
+            <h4>24.04.2023</h4>
+            <p>- od teraz domyślną stroną jest strona logowania</p>
+            <p>- changelog przeniesiony do osobnej zakładki</p>
+            <p>- dodano wiele nowych tłumaczeń gui</p>
+            <p>- naprawiony bug z pokazywaniem anulowanego dnia na wykresie</p>
+            <p>- testowa, wstepna wersja opisu funkcjonalności w postaci pomocy "<font color="#6495ed">(?)</font>"</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
             <h4>12.04.2023</h4>
             <p>- aktywowane sortowanie rutyn</p>
         </div>

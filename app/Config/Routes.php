@@ -16,7 +16,7 @@ $routes = Services::routes();
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Dashboard');
+$routes->setDefaultController('User');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -37,9 +37,10 @@ $routes->set404Override();
 //$routes->get('register', [User::class, 'register']);
 
 //NOT LOGGED
-$routes->get('/', [User::class, 'index'], ['filter' => 'noauth']);
+$routes->get('/', [User::class, 'login'], ['filter' => 'noauth']);
 $routes->match(['get','post'],'login', 'User::login', ['filter' => 'noauth']);
 $routes->match(['get','post'],'register', 'User::register', ['filter' => 'noauth']);
+$routes->get('/changelog', [User::class, 'index'], ['filter' => 'noauth']);
 
 //LOGGED
     $routes->get('dashboard', [Dashboard::class, 'index'], ['filter' => 'auth']);
