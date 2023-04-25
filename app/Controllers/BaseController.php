@@ -55,12 +55,14 @@ abstract class BaseController extends Controller
 
         // Preload any models, libraries, etc, here.
 
-
         $this->viewData['locale'] = $request->getLocale();
 
         // E.g.: $this->session = \Config\Services::session();
         $session = \Config\Services::session();
         $language = \Config\Services::language();
+
+        // if session user have lang is setted
+        // then get that lang and continue code
 
         if(!$session->lang)
             $session->lang = $this->viewData['locale'];

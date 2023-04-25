@@ -5,7 +5,11 @@ namespace App\Controllers;
 class Language extends BaseController
 {
     public function index()
-    {   $session = session();
+    {
+
+        // set there lang to user model??
+
+        $session = session();
         $locale = $this->request->getLocale();
         $session->remove('lang');
         $session->set('lang',$locale);

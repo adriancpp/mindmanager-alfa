@@ -13,7 +13,7 @@ class UserModel extends Model
     - 1 - user
     - 2 - admin
      */
-    protected $allowedFields = ['login', 'nickname', 'email', 'password', 'updated_at', 'role', 'premium'];
+    protected $allowedFields = ['login', 'nickname', 'email', 'password', 'updated_at', 'role', 'premium', 'lang'];
     protected $useTimestamps = true;
 
     protected $beforeInsert = ['beforeInsert'];
