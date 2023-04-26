@@ -11,6 +11,9 @@ class Language extends BaseController
 
         $session = session();
         $locale = $this->request->getLocale();
+
+        // userLang -> set( $locale );
+
         $session->remove('lang');
         $session->set('lang',$locale);
         $url = base_url();
