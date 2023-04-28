@@ -10,4 +10,7 @@ return [
     'nav_lang_en' => "English",
     'nav_lang_pl' => "Polish",
     'nav_logout' => "Logout",
+
+    'nav_login' => "Login",
+    'nav_register' => "Registration",
 ];

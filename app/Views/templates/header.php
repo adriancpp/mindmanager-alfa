@@ -51,10 +51,10 @@
                 <?php else: ?>
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item <?= ($uri->getSegment(1) == '' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/login">Logowanie</a>
+                            <a class="nav-link" href="/login"><?= lang('main.nav_login') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'register' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/register">Rejestracja</a>
+                            <a class="nav-link" href="/register"><?= lang('main.nav_register') ?></a>
                         </li>
                     </ul>
                     <ul class="navbar-nav my-2 my-lg-0">
