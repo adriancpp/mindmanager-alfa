@@ -68,7 +68,7 @@
 
                         <div class="vl"></div>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'changelog' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/changelog">Changelog</a>
+                            <a class="nav-link" href="/changelog"><?= lang('main.nav_changelog') ?></a>
                         </li>
                         <div class="vl"></div>
 

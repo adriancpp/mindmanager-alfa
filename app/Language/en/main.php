@@ -13,4 +13,5 @@ return [
 
     'nav_login' => "Login",
     'nav_register' => "Registration",
+    'nav_changelog' => "Changelog",
 ];

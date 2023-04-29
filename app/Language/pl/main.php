@@ -13,4 +13,5 @@ return [
 
     'nav_login' => "Logowanie",
     'nav_register' => "Rejestracja",
+    'nav_changelog' => "Aktualizacje",
 ];
