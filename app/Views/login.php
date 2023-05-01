@@ -11,11 +11,11 @@
                 <?php endif; ?>
                 <form class="" action="/login" method="post">
                     <div class="form-group">
-                        <label for="email">Login</label>
+                        <label for="email"><?= lang('user.form_login') ?></label>
                         <input type="text" class="form-control" name="login" id="login" value="<?= set_value('login') ?>">
                     </div>
                     <div class="form-group">
-                        <label for="password">Hasło</label>
+                        <label for="password"><?= lang('user.form_password') ?></label>
                         <input type="password" class="form-control" name="password" id="password" value="">
                     </div>
                     <?php if(isset($validation)): ?>

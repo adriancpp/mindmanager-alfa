@@ -1,5 +1,7 @@
 <?php
 
 return [
-    'login' => "Login"
+    'login' => "Login",
+    'form_login' => "Login",
+    'form_password' => "Password"
 ];
