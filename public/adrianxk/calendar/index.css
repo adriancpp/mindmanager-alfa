@@ -1,0 +1,51 @@
+td{
+    padding: 30px;
+    font-size: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+ td {
+    border: 1px solid;
+}
+
+ .week
+ {
+     color: crimson;
+ }
+
+.today
+{
+    font-weight: bold;
+    color: darkcyan;
+}
+
+.clickedByMe {
+    background-image: radial-gradient(circle at center, green 5px, transparent 6px), radial-gradient(circle at center, green 5px, transparent 6px);
+    background-size: 20px 20px;
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+.counter-0 {
+    background-color: #f9faf0;}
+
+.counter-1 {
+    background-color: #f4fcb8;}
+
+.counter-2 {
+    background-color: #dae874;}
+
+.counter-3 {
+    background-color: #c0d330;}
+
+.counter-4 {
+    background-color: #939e3c;}
+
+.counter-5 {
+    background-color: #656947;}
+
+.counter-6 {
+    background-color: #35362f;}

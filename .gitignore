@@ -1,2 +1,5 @@
 writable
 app/Config/Database.php
+public/adrianxk/calendar/connection.php
+public/adrianxk/calendar/secure.php
+public/adrianxk/calendar/secure.php
