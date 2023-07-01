@@ -2,7 +2,7 @@
 
 //function setStoperAt( $actualTime, $mode )
 // alert() <-- play song until click OK
-<audio id="xyz" src="whatever_you_want.mp3" preload="auto"></audio>
+//<audio id="xyz" src="whatever_you_want.mp3" preload="auto"></audio>
 
 if(x > 10)
 {
