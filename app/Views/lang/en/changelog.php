@@ -2,6 +2,13 @@
 
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
+            <h4>2.07.2023</h4>
+            <p>- visible special icon on premium account</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
             <h4>24.04.2023</h4>
             <p>- from now on, the default page is the login page</p>
             <p>- changelog moved to a separate tab</p>

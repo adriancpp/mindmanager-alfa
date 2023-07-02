@@ -1,7 +1,11 @@
 <div class="container">
     <div class="row">
         <div class="col-12 mb-5">
-            <h1><?= lang('dashboard.welcome') ?>, <?= session()->get('nickname') ?></h1>
+            <h1><?= lang('dashboard.welcome') ?>, <?= session()->get('nickname') ?>
+                <?php if(session()->get('premium') == 1): ?>
+                    <img width="40px" src="/assets/icons/premium.png">
+                <?php endif; ?>
+            </h1>
         </div>
 
         <div class="row">
