@@ -62,6 +62,7 @@ $routes->get('/changelog', [User::class, 'index'], ['filter' => 'noauth']);
     $routes->match(['get','post'],'/friends', 'UserFriend::index', ['filter' => 'auth']);
     $routes->match(['get','post'],'/friends/send/invite', 'UserFriend::sendInvite', ['filter' => 'auth']);
     $routes->match(['get','post'],'/friends/accept', 'UserFriend::accept', ['filter' => 'auth']);
+    $routes->match(['get','post'],'/friends/remove', 'UserFriend::remove', ['filter' => 'auth']);
 
     $routes->match(['get','post'],'/chart/friend/(:any)', 'Charts::friend/$1', ['filter' => 'auth']);
 

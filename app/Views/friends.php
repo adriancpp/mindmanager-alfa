@@ -34,6 +34,10 @@
                             <h4 class="one">Lista znajomych</h4>
                             <?php foreach ($friends_confirmed as $friend): ?>
                                 <div>* <?= $friend->friend_name ?></div><br>
+                                <form class="" action="/friends/remove" method="post">
+                                    <input type="hidden" name="id" value="<?= $friend->id ?>">
+                                    <button type="submit" class="btn btn-success">Usuń</button>
+                                </form><br>
                             <?php endforeach; ?>
 
                         </div>

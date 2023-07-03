@@ -112,4 +112,26 @@ class UserFriend extends BaseController
 
         return redirect()->to('/friends');
     }
+
+    public function remove()
+    {
+        if($this->request->getMethod() == 'post')
+        {
+            $id = $this->request->getVar('id');
+
+            $db = db_connect();
+
+            $model = new UserFriendRepository($db);
+            //secure for not owner id paste
+
+
+            //there -> if invite exist
+//            $friendInvite = $model->ifInviteExist($id);
+//            if(empty($friendInvite))
+//                return redirect()->to('/friends');
+
+        }
+
+        return redirect()->to('/friends');
+    }
 }
