@@ -106,4 +106,27 @@ class UserFriendRepository
             ->where(['confirmed' => 0])
             ->get()->getResult();
     }
+
+    function isConfirmedAndOwnedBy($id, $userId)
+    {
+        $userId = $this->db->escape($userId);
+
+        $where = "
+            (user1_id={$userId} OR user2_id={$userId})
+        ";
+
+        return $this->db->table('user_friend')
+            ->where($where)
+            ->where(['id' => $id])
+            ->where(['confirmed' => 1])
+            ->get()->getResult();
+    }
+
+    function removeFriend($id)
+    {
+        $builder = $this->db->table('user_friend');
+
+        $builder->where('id', $id);
+        $builder->delete();
+    }
 }

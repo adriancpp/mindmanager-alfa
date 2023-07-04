@@ -122,14 +122,16 @@ class UserFriend extends BaseController
             $db = db_connect();
 
             $model = new UserFriendRepository($db);
-            //secure for not owner id paste
 
+            //check if user_1 or user_2 is = $userId
+                //& if confirmed = 1
 
-            //there -> if invite exist
-//            $friendInvite = $model->ifInviteExist($id);
-//            if(empty($friendInvite))
-//                return redirect()->to('/friends');
+            $friendInvite = $model->isConfirmedAndOwnedBy($id, session()->get('id'));
 
+            if(empty($friendInvite))
+                return redirect()->to('/friends');
+
+            $model->removeFriend($id);
         }
 
         return redirect()->to('/friends');
