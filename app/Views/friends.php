@@ -14,7 +14,7 @@
                             </form>
 
                             <br><br>
-                            <h4 class="one">Otrzymane zaproszenia</h4>
+                            <h4 class="one"><?= lang('userFriend.received_invitations') ?></h4>
                             <?php foreach ($friends_invite_geted as $friend): ?>
                             <hr>
                                 <div>* <?= $friend->friend_name ?></div>
@@ -25,13 +25,13 @@
                             <?php endforeach; ?>
 
                             <br><br>
-                            <h4 class="one">Lista zaproszonych</h4>
+                            <h4 class="one"><?= lang('userFriend.invite_list') ?></h4>
                             <?php foreach ($friends_invite_sended as $friend): ?>
                                 <div>* <?= $friend->friend_name ?></div><br>
                             <?php endforeach; ?>
 
                             <br><br>
-                            <h4 class="one">Lista znajomych</h4>
+                            <h4 class="one"><?= lang('userFriend.friends_list') ?></h4>
                             <?php foreach ($friends_confirmed as $friend): ?>
                                 <div>* <?= $friend->friend_name ?></div>
                                 <form class="" action="/friends/remove" method="post">
