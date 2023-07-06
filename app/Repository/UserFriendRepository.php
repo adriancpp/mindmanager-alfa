@@ -118,7 +118,7 @@ class UserFriendRepository
         return $this->db->table('user_friend')
             ->where($where)
             ->where(['id' => $id])
-            ->where(['confirmed' => 1])
+            //->where(['confirmed' => 1])
             ->get()->getResult();
     }
 

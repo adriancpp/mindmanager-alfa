@@ -117,14 +117,9 @@ class UserFriend extends BaseController
     {
         if($this->request->getMethod() == 'post')
         {
-            $id = $this->request->getVar('id');
-
             $db = db_connect();
-
+            $id = $this->request->getVar('id');
             $model = new UserFriendRepository($db);
-
-            //check if user_1 or user_2 is = $userId
-                //& if confirmed = 1
 
             $friendInvite = $model->isConfirmedAndOwnedBy($id, session()->get('id'));
 

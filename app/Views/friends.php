@@ -18,6 +18,10 @@
                             <?php foreach ($friends_invite_geted as $friend): ?>
                             <hr>
                                 <div>* <?= $friend->friend_name ?></div>
+                                <form class="" action="/friends/remove" method="post">
+                                    <input type="hidden" name="id" value="<?= $friend->id ?>">
+                                    <button type="submit" class="btn btn-success">Odrzuć</button>
+                                </form><br>
                                 <form class="" action="/friends/accept" method="post">
                                     <input type="hidden" name="id" value="<?= $friend->id ?>">
                                     <button type="submit" class="btn btn-success">Akceptuj</button>
@@ -28,6 +32,10 @@
                             <h4 class="one"><?= lang('userFriend.invite_list') ?></h4>
                             <?php foreach ($friends_invite_sended as $friend): ?>
                                 <div>* <?= $friend->friend_name ?></div><br>
+                                <form class="" action="/friends/remove" method="post">
+                                    <input type="hidden" name="id" value="<?= $friend->id ?>">
+                                    <button type="submit" class="btn btn-success">Anuluj</button>
+                                </form><br>
                             <?php endforeach; ?>
 
                             <br><br>
