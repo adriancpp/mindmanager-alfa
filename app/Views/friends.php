@@ -7,10 +7,10 @@
 
                     <div class="row p-2">
                         <div class="col-lg-12">
-                            <h3 class="one">Znajomi</h3>
+                            <h3 class="one"><?= lang('userFriend.friends') ?></h3>
                             <form class="" action="/friends/send/invite" method="post">
                                 <input type="text" name="login" value="">
-                                <button type="submit" class="btn btn-primary">Wyślij zaproszenie</button>
+                                <button type="submit" class="btn btn-primary"><?= lang('userFriend.send_an_invitation') ?></button>
                             </form>
 
                             <br><br>
@@ -20,11 +20,11 @@
                                 <div>* <?= $friend->friend_name ?></div>
                                 <form class="" action="/friends/remove" method="post">
                                     <input type="hidden" name="id" value="<?= $friend->id ?>">
-                                    <button type="submit" class="btn btn-success">Odrzuć</button>
+                                    <button type="submit" class="btn btn-success"><?= lang('userFriend.reject') ?></button>
                                 </form><br>
                                 <form class="" action="/friends/accept" method="post">
                                     <input type="hidden" name="id" value="<?= $friend->id ?>">
-                                    <button type="submit" class="btn btn-success">Akceptuj</button>
+                                    <button type="submit" class="btn btn-success"><?= lang('userFriend.accept') ?></button>
                                 </form><br>
                             <?php endforeach; ?>
 
@@ -34,7 +34,7 @@
                                 <div>* <?= $friend->friend_name ?></div><br>
                                 <form class="" action="/friends/remove" method="post">
                                     <input type="hidden" name="id" value="<?= $friend->id ?>">
-                                    <button type="submit" class="btn btn-success">Anuluj</button>
+                                    <button type="submit" class="btn btn-success"><?= lang('userFriend.cancel') ?></button>
                                 </form><br>
                             <?php endforeach; ?>
 
@@ -44,13 +44,12 @@
                                 <div>* <?= $friend->friend_name ?></div>
                                 <form class="" action="/friends/remove" method="post">
                                     <input type="hidden" name="id" value="<?= $friend->id ?>">
-                                    <button type="submit" class="btn btn-success">Usuń</button>
+                                    <button type="submit" class="btn btn-success"><?= lang('userFriend.delete') ?></button>
                                 </form><br>
                             <?php endforeach; ?>
 
                         </div>
                     </div>
-
 
 
                 </div>
