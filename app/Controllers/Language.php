@@ -2,6 +2,9 @@
 
 namespace App\Controllers;
 
+use App\Models\RoutineModel;
+use App\Models\UserModel;
+
 class Language extends BaseController
 {
     public function index()
@@ -12,7 +15,21 @@ class Language extends BaseController
         $session = session();
         $locale = $this->request->getLocale();
 
-        // userLang -> set( $locale );
+        if(session()->get('id'))
+        {
+            $model = new UserModel();
+            $user = $model->find(session()->get('id'));
+
+            if($user)
+            {
+                $newData = [
+                    'id' => session()->get('id'),
+                    'lang' => $locale,
+                ];
+
+                $model->save($newData);
+            }
+        }
 
         $session->remove('lang');
         $session->set('lang',$locale);

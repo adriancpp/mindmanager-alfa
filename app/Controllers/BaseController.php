@@ -61,15 +61,10 @@ abstract class BaseController extends Controller
         $session = \Config\Services::session();
         $language = \Config\Services::language();
 
-        // if session user have lang is setted
-        // then get that lang and continue code
+        if(session()->get('lang'))
+            $session->lang = session()->get('lang');
 
-        $userLang = null;//$userLang = 'pl';
-
-        if($userLang){
-            $session->lang = $userLang;
-        }
-        else if(!$session->lang)
+        if(!$session->lang)
             $session->lang = $this->viewData['locale'];
 
         $language->setLocale($session->lang);

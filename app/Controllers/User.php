@@ -81,6 +81,7 @@ class User extends BaseController
             'role' => $user['role'],
             'premium' => $user['premium'],
             'isLoggedIn' => true,
+            'lang' => $user['lang']
         ];
 
         session()->set($data);
