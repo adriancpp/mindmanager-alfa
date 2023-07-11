@@ -9,6 +9,18 @@
         </div>
 
         <div class="row">
+            <div class="col-12 mb-5">
+
+                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">Poniżej znajduje się lista twoich codziennych aktywności. [ROZWIŃ]</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
             <div class="col-md-6">
                 <div class="container">
                     <div class="row">
