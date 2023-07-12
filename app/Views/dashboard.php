@@ -10,15 +10,23 @@
 
         <div class="row">
             <div class="col-12 mb-5">
-
-                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                    <div class="card-body">
-                        <p class="card-text">Poniżej znajduje się lista twoich codziennych aktywności. [ROZWIŃ]</p>
+                <div class="container">
+                    <div class="alert alert-dark" role="alert">
+                        <div class="row">
+                            <div class="col-12 collapse-group">
+                                <h5>Dzisiejsze aktywności</h5><br>
+                                Poniżej znajduje się lista twoich codziennych aktywności.
+                                <p class="collapse" id="viewdetails">Aby dodac nowa aktyuwnosc otworz sekcje z listy lub klinij TUTAJ</p>
+                                <p><a class="btn" data-toggle="collapse" data-target="#viewdetails">Rozwiń &raquo;</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
+
+
+
 
         <div class="row">
             <div class="col-md-6">
