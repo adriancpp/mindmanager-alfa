@@ -1,28 +1,40 @@
 <div class="container">
     <div class="row">
-        <div class="col-12 mb-5">
+        <div class="col-6 mb-5">
             <h1><?= lang('dashboard.welcome') ?>, <?= session()->get('nickname') ?>
                 <?php if(session()->get('premium') == 1): ?>
                     <img width="40px" src="/assets/icons/premium.png">
                 <?php endif; ?>
             </h1>
         </div>
+        <div class="col-6">
+            <div class="float-right">
+                <h1>
+                    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css'>
+                    <!-- Button trigger modal -->
+                    <a href="#" data-toggle="collapse" data-target="#viewdetails" style="color: inherit;">
+                        <h3>
+                        <span class="bi bi-question-circle" ></span>
+                        </h3>
+                    </a>
+                </h1>
+            </div>
+        </div>
+
+        <div class="col-12 collapse-grou collapse" id="viewdetails">
 
         <div class="row">
-            <div class="col-12 mb-5">
+            <div class="col-12">
                 <div class="container">
                     <div class="alert alert-dark" role="alert">
-                        <div class="row">
-                            <div class="col-12 collapse-group">
+
                                 <h5>Dzisiejsze aktywności</h5><br>
                                 Poniżej znajduje się lista twoich codziennych aktywności.
-                                <p class="collapse" id="viewdetails">Aby dodac nowa aktyuwnosc otworz sekcje z listy lub klinij TUTAJ</p>
-                                <p><a class="btn" data-toggle="collapse" data-target="#viewdetails">Rozwiń &raquo;</a></p>
-                            </div>
-                        </div>
+                                Aby dodac nowa aktyuwnosc otworz sekcje z listy lub klinij TUTAJ
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 
 
