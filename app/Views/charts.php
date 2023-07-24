@@ -11,6 +11,7 @@
             <script>
                 window.onload = function () {
                     <?php foreach ($allRoutines as $routine): ?>
+
                         var chart<?= $routine->id ?> = new CanvasJS.Chart("chartContainer<?= $routine->id ?>", {
                             title: {
                                 text: "<?= $routine->name ?>"
@@ -29,6 +30,14 @@
             </script>
 
         <?php foreach ($allRoutines as $routine): ?>
+
+            <?php
+                if($routine->progressCount>0)
+                    print 'Miesięczny postęp: <b> '.$routine->progress/$routine->progressCount .'</b>';
+                else
+                    print 'Miesięczny postęp: <b> Za mało danych</b>';
+            ?>
+
             <div id="chartContainer<?= $routine->id ?>" style="height: 370px; width: 100%;"></div>
             <div style="margin: 10px;"></div>
         <?php endforeach; ?>

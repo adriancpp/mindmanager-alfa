@@ -22,6 +22,8 @@ class Charts extends BaseController
         $data['friends'] = $friendsModel->allConfirmed(session()->get('id'));
 
         $sortedRoutines = [];
+        $lastMonth = 0; // used for avg trend
+        $lastMonthCount = 0;
 
         foreach($routines as $routine)
         {
@@ -33,6 +35,8 @@ class Charts extends BaseController
                 $singleRoutine->title = $routine->name;
                 $singleRoutine->text = "Ilość";
                 $singleRoutine->data = [];
+                $singleRoutine->progress = 0;
+                $singleRoutine->progressCount = 0;
 
                 $sortedRoutines[$routine->id] = $singleRoutine;
             }
@@ -42,8 +46,16 @@ class Charts extends BaseController
             $dataArr['y'] = $routine->amount;
             $dataArr['label'] = $routine->day;
 
+
+            if($routine->day >= date("Y-m-d", strtotime("-1 months"))) //routine day +1 msc >= date
+            {
+                $sortedRoutines[$routine->id]->progress += $routine->amount;
+                $sortedRoutines[$routine->id]->progressCount += 1;
+            }
+
             $sortedRoutines[$routine->id]->data[] = $dataArr;
         }
+        $lastMonth =
 
         $data['allRoutines'] = $sortedRoutines;
 
