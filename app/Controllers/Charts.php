@@ -46,7 +46,7 @@ class Charts extends BaseController
             $dataArr['y'] = $routine->amount;
             $dataArr['label'] = $routine->day;
 
-
+            ////// MUST CHANGE LOGIC !!! For that i need average few from left and right... more complicated
             if($routine->day >= date("Y-m-d", strtotime("-1 months"))) //routine day +1 msc >= date
             {
                 $sortedRoutines[$routine->id]->progress += $routine->amount;
