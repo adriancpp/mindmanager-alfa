@@ -2,8 +2,9 @@
 
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
-            <h4>xxx.xxx.2023</h4>
-            <p>- wersja beta sekcji pomocy / tutoriali</p>
+            <h4>25.09.2023</h4>
+            <p>- beta section of help / tutorials</p>
+            <p>- fixed friend chart preview bug</p>
         </div>
     </div>
 

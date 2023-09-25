@@ -12,6 +12,7 @@ echo "Witam w tajnym miejscu";
     <li><a href="songs/berkowicz_16.php">Berkowicz #hot16challenge</a></li>
     <li><a href="songs/karate_mistrz.php">King Bruce Lee Karate Mistrz</a></li>
     <li><a href="songs/disney_kizo.php">Disney Kizo</a></li>
+    <li><a href="songs/lydka_grubasa_gender.php">Łydka Grubasa - Gender</a></li>
 </ul>
 
 

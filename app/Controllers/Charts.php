@@ -95,6 +95,8 @@ class Charts extends BaseController
                     $singleRoutine->title = $routine->name;
                     $singleRoutine->text = "Ilość";
                     $singleRoutine->data = [];
+                    $singleRoutine->progress = 0;
+                    $singleRoutine->progressCount = 0;
 
                     $sortedRoutines[$routine->id] = $singleRoutine;
                 }
