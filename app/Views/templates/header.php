@@ -29,6 +29,9 @@
                             <a class="nav-link" href="/routine"><?= lang('main.nav_streak') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
+                            <a class="nav-link" href="/routine">ActivSortert</a>
+                        </li>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
                             <a class="nav-link" href="/charts"><?= lang('main.nav_charts') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">
