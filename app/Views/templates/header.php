@@ -25,13 +25,13 @@
                         <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
                             <a class="nav-link" href="/routine"><?= lang('main.nav_routines') ?></a>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/routine"><?= lang('main.nav_streak') ?></a>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'streak' ? 'active' : null) ?>">
+                            <a class="nav-link" href="/streak"><?= lang('main.nav_streak') ?></a>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
-                            <a class="nav-link" href="/routine">ActivSortert</a>
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'planner' ? 'active' : null) ?>">
+                            <a class="nav-link" href="/planner">ActivSortert</a>
                         </li>
-                        <li class="nav-item <?= ($uri->getSegment(1) == 'routine' ? 'active' : null) ?>">
+                        <li class="nav-item <?= ($uri->getSegment(1) == 'charts' ? 'active' : null) ?>">
                             <a class="nav-link" href="/charts"><?= lang('main.nav_charts') ?></a>
                         </li>
                         <li class="nav-item <?= ($uri->getSegment(1) == 'profile' ? 'active' : null) ?>">

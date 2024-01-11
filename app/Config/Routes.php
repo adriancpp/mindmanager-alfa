@@ -66,6 +66,12 @@ $routes->get('/changelog', [User::class, 'index'], ['filter' => 'noauth']);
 
     $routes->match(['get','post'],'/chart/friend/(:any)', 'Charts::friend/$1', ['filter' => 'auth']);
 
+    //streak
+    $routes->match(['get','post'],'/streak', 'Streak::index', ['filter' => 'auth']);
+
+    //planner
+    $routes->match(['get','post'],'/planner', 'Planner::index', ['filter' => 'auth']);
+
 $routes->get('/lang/{locale}', 'Language::index');
 /*
  * --------------------------------------------------------------------
