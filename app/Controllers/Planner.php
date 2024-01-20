@@ -19,6 +19,12 @@ use App\Repository\UserFriendRepository;
 
 Jak to w ogole ma dzialac?
 
+-----------
+dodaj sekcje progres:
+1. bedzie pokazany cvs osoby (podstawowy!!!!) i do zaznaczania stan ciala dodatkowo samopoczuie
+na dole lista przesuwana z aktuwnosciami - last tydzien
++ ukryte wgrane zdjecia progresu tam dane o biceps itd
++ pod spodem lista zrobionych rzeczy
 
 */
 
