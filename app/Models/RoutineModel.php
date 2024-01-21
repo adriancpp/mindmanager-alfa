@@ -11,7 +11,7 @@ class RoutineModel extends Model
     /*
     Type:
      */
-    protected $allowedFields = ['name', 'type', 'sort', 'priority', 'required_amount', 'active', 'user_id'];
+    protected $allowedFields = ['name', 'type', 'sort', 'priority', 'required_amount', 'active', 'user_id', 'category'];
     protected $useTimestamps = true;
 
     protected $beforeInsert = ['beforeInsert'];

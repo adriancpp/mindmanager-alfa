@@ -98,6 +98,7 @@ class Routine extends BaseController
                     'priority' => $this->request->getVar('priority'),
                     'required_amount' => $this->request->getVar('required_amount'),
                     'active' => $this->request->getVar('active'),
+                    'category' => $this->request->getVar('category'),
                 ];
                 $model->save($newData);
                 $session = session();
@@ -156,7 +157,8 @@ class Routine extends BaseController
             'id' => $routine['id'],
             'name' => $routine['name'],
             'required_amount' => $routine['required_amount'],
-            'sort' => $routine['sort']
+            'sort' => $routine['sort'],
+            'category' => $routine['category']
         ];
 
 
@@ -189,6 +191,7 @@ class Routine extends BaseController
                     'priority' => $this->request->getVar('priority'),
                     'required_amount' => $this->request->getVar('required_amount'),
                     'active' => $this->request->getVar('active'),
+                    'category' => $this->request->getVar('category'),
                 ];
 
                 $model->save($newData);

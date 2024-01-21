@@ -11,7 +11,7 @@
 
     .cat label {
         float: left; line-height: 3.0em;
-        width: 8.0em; height: 3.0em;
+        width: 4.0em; height: 3.0em;
     }
 
     .cat label span {
@@ -117,10 +117,8 @@
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
-
                             <div class="form-group">
                                 Kategoria<br>
-
                                 <div class="cat action">
                                     <label>
                                         <input name="category" type="checkbox" class="single-checkbox" value="SPORT" checked><span>Sport</span>
@@ -129,23 +127,16 @@
 
                                 <div class="cat comedy">
                                     <label>
-                                        <input name="category" type="checkbox" class="single-checkbox" value="NAUKA"><span>Nauka</span>
+                                        <input name="category" type="checkbox" class="single-checkbox" value="CODE"><span>Projekt</span>
                                     </label>
                                 </div>
 
                                 <div class="cat crime">
                                     <label>
-                                        <input name="category" type="checkbox" class="single-checkbox" value="ZDROWIE"><span>Zdrowie</span>
-                                    </label>
-                                </div>
-
-                                <div class="cat history">
-                                    <label>
-                                        <input name="category" type="checkbox" class="single-checkbox" value="INNE"><span>Inne</span>
+                                        <input name="category" type="checkbox" class="single-checkbox" value="LEARN"><span>Nauka</span>
                                     </label>
                                 </div>
                             </div>
-
                         </div>
                         </div>
                         <div class="col-12 col-sm-12">
@@ -214,23 +205,8 @@
     }
 
     $(document).ready(function () {
-        //just block
-        // $('input.single-checkbox').on('change', function(evt) {
-        //     if($('.single-checkbox:checked').length > 1) {
-        //         this.checked = false;
-        //     }
-        // });
-
-        //replace check
         $('input.single-checkbox').on('change', function(evt) {
-
             $('.single-checkbox:checked').not(this).prop('checked', false);
-
-            if($('.single-checkbox:checked').length > 1) {
-
-
-                //this.checked = true;
-            }
         });
     });
 </script>

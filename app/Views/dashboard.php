@@ -38,9 +38,38 @@
         </div>
 
 
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12">
+                    <div class="container">
+                        <b><a>[FULL]</a>Ostatnie aktywnosci sportowe    |    Sugerowane dzisiaj:</b>
+                        <div class="container bg-light p-3">
+                            <div class="row">
+                                <div class="col-sm border-right border-dark">
+                                    4 dni temu
+                                </div>
+                                <div class="col-sm border-right border-dark">
+                                    3 dni temu
+                                </div>
+                                <div class="col-sm border-right border-dark">
+                                    przedwczoraj
+                                </div>
+                                <div class="col-sm border-right border-dark">
+                                    wczoraj
+                                </div>
+                                <div class="col-sm">
+                                    if nie zrobiono - generateSugestia() show().,
+                                    else show zrobione dzisiaj
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
 
-
-        <div class="row">
+        <div class="row mt-4">
             <div class="col-md-6">
                 <div class="container">
                     <div class="row">
