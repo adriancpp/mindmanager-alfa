@@ -54,6 +54,23 @@ class Routine extends BaseController
 
         if($this->request->getMethod() == 'post')
         {
+
+
+            //przy routine chyba musze zrobic tak ze kazdy moze dodac swoje kategorie - ale to moge zrobic pozniej
+            //na razie mysle ze potrzebuje kategorie:
+            /*
+            1. SPORT
+            2. CODE (project)
+            3. LEARN (new tech)
+
+
+             */
+
+
+//            echo 'dte: ';
+//            echo $this->request->getVar('category');
+//            die;
+
             //lets do validation here
             $rules = [
                 'name' => 'required|min_length[1]|max_length[50]',

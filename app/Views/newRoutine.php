@@ -1,3 +1,51 @@
+<style>
+
+    .cat{
+        margin: 4px;
+        background-color: #104068;
+        border-radius: 4px;
+        border: 1px solid #fff;
+        overflow: hidden;
+        float: left;
+    }
+
+    .cat label {
+        float: left; line-height: 3.0em;
+        width: 8.0em; height: 3.0em;
+    }
+
+    .cat label span {
+        text-align: center;
+        padding: 3px 0;
+        display: block;
+    }
+
+    .cat label input {
+        position: absolute;
+        display: none;
+        color: #fff !important;
+    }
+    /* selects all of the text within the input element and changes the color of the text */
+    .cat label input + span{color: #fff;}
+
+
+    /* This will declare how a selected input will look giving generic properties */
+    .cat input:checked + span {
+        color: #ffffff;
+        text-shadow: 0 0  6px rgba(0, 0, 0, 0.8);
+    }
+
+    /*
+        This following statements selects each category individually that contains an input element that is a checkbox
+        and is checked (or selected) and chabges the background color of the span element.
+    */
+
+    .action input:checked + span{background-color: #F75A1B;}
+    .comedy input:checked + span{background-color: #1BB8F7;}
+    .crime input:checked + span{background-color: #D9D65D;}
+    .history input:checked + span{background-color: #82D44E;}
+</style>
+
 <div class="container">
     <div class="row">
         <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 mt-5 pt-3 pb-3 bg-white from-wrapper">
@@ -68,6 +116,38 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-12 col-sm-6">
+
+                            <div class="form-group">
+                                Kategoria<br>
+
+                                <div class="cat action">
+                                    <label>
+                                        <input name="category" type="checkbox" class="single-checkbox" value="SPORT" checked><span>Sport</span>
+                                    </label>
+                                </div>
+
+                                <div class="cat comedy">
+                                    <label>
+                                        <input name="category" type="checkbox" class="single-checkbox" value="NAUKA"><span>Nauka</span>
+                                    </label>
+                                </div>
+
+                                <div class="cat crime">
+                                    <label>
+                                        <input name="category" type="checkbox" class="single-checkbox" value="ZDROWIE"><span>Zdrowie</span>
+                                    </label>
+                                </div>
+
+                                <div class="cat history">
+                                    <label>
+                                        <input name="category" type="checkbox" class="single-checkbox" value="INNE"><span>Inne</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
                         <div class="col-12 col-sm-12">
                             <div class="form-group">
 
@@ -132,4 +212,25 @@
             document.getElementById("required_amount_div").style.display = "none";
         }
     }
+
+    $(document).ready(function () {
+        //just block
+        // $('input.single-checkbox').on('change', function(evt) {
+        //     if($('.single-checkbox:checked').length > 1) {
+        //         this.checked = false;
+        //     }
+        // });
+
+        //replace check
+        $('input.single-checkbox').on('change', function(evt) {
+
+            $('.single-checkbox:checked').not(this).prop('checked', false);
+
+            if($('.single-checkbox:checked').length > 1) {
+
+
+                //this.checked = true;
+            }
+        });
+    });
 </script>

@@ -61,6 +61,12 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="name">Nazwa</label>
+                                <input type="text" class="form-control" name="name" id="name" value="<?= $routine['name'] ?>">
+                            </div>
+                        </div>
 
 
                     </div>
