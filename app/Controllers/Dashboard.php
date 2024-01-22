@@ -113,6 +113,9 @@ class Dashboard extends BaseController
 //                echo '</pre>';
 
 
+        //load sports for dashboard
+        $data['sports'] = [];
+
         echo view('templates/header', $data);
         echo view('dashboard', $data);
         echo view('templates/footer', $data);
