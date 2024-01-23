@@ -114,6 +114,7 @@ class Dashboard extends BaseController
 
 
         //load sports for dashboard
+        // new query - get all last 5 days for user where tag is SPORT and user id is user id, sort by date
         $data['sports'] = [];
 
         echo view('templates/header', $data);
