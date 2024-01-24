@@ -95,4 +95,13 @@ class RoutineRepository
         $builder->where('id', $routineId);
         $builder->delete();
     }
+
+    function allWithCategory($userId, $category)
+    {
+        //"SELECT * FROM posts";
+        return $this->db->table('routine')
+            ->where(['user_id' => $userId])
+            ->orderBy('routine.sort', 'ASC')
+            ->get()->getResult();
+    }
 }
