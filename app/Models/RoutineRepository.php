@@ -101,6 +101,7 @@ class RoutineRepository
         //"SELECT * FROM posts";
         return $this->db->table('routine')
             ->where(['user_id' => $userId])
+            ->where(['category' => $category])
             ->orderBy('routine.sort', 'ASC')
             ->get()->getResult();
     }
