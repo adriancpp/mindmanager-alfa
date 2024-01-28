@@ -101,6 +101,7 @@ class RoutineRepository
         //"SELECT * FROM posts";
         //new query will be there - need take:
            //all with sport with date higher than date > 5 days ago - and for that i join activities1!!!!
+        //first, check if i use similiar thing in that repository
         return $this->db->table('routine')
             ->where(['user_id' => $userId])
             ->where(['category' => $category])
