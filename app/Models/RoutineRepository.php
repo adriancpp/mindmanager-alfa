@@ -102,6 +102,7 @@ class RoutineRepository
         //new query will be there - need take:
            //all with sport with date higher than date > 5 days ago - and for that i join activities1!!!!
         //first, check if i use similiar thing in that repository
+        //maybe can i use it: getRoutinesForCurrentDayWithStatus()
         return $this->db->table('routine')
             ->where(['user_id' => $userId])
             ->where(['category' => $category])
