@@ -103,10 +103,29 @@ class RoutineRepository
            //all with sport with date higher than date > 5 days ago - and for that i join activities1!!!!
         //first, check if i use similiar thing in that repository
         //maybe can i use it: getRoutinesForCurrentDayWithStatus()
+
+        $currentData = date("d/m");
+        $fewDaysAgoData = date("d/m"); // -5 days add!
+        //"SELECT * FROM posts";
+        return $this->db->table('routine')
+            ->select('routine.id as id, routine.name, routine_history.id as rhId, 
+                        routine.type as type, routine_history.status as status, routine.priority as priority, 
+                        routine_history.value as amount')
+            ->join('routine_history', 'routine.id = routine_history.routine_id 
+                    and cast( routine_history.updated_at as date) = cast(now() as date)
+                    
+                    ' , 'left')
+            ->where(['routine.user_id' => $userId])
+            ->where(['routine.active' => 1])
+
+            ->orderBy('routine.sort', 'ASC')
+            ->get()->getResult();
+
         return $this->db->table('routine')
             ->where(['user_id' => $userId])
             ->where(['category' => $category])
             ->orderBy('routine.sort', 'ASC')
             ->get()->getResult();
+
     }
 }
