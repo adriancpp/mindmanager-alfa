@@ -117,10 +117,10 @@ class Dashboard extends BaseController
         // new query - get all last 5 days for user where tag is SPORT and user id is user id, sort by date
         $data['sports'] = [];
         $result = $model->allWithCategory(session()->get('id'), "SPORT");
-                        echo '<pre>';
-                print_r($result);
-                echo '</pre>';
-                die;
+//                        echo '<pre>';
+//                print_r($result);
+//                echo '</pre>';
+//                die;
 
 
         echo view('templates/header', $data);
